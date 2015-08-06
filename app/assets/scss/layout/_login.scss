@@ -1,8 +1,11 @@
-.login{
+#wrapper{
     @extend %full-container;
-    @include background-image("main-bg.jpg", $color:red);
 }
-
+.controller-container{
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+}
 .connect-panel{
     text-align: center;
     padding: 20px;
