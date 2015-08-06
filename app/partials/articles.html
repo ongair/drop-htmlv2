@@ -1,0 +1,17 @@
+<div class="controller-container">
+
+    <ul id="articles">
+        <li ng-repeat="article in articles" id="post_{{article.id}}">
+            <a href="#">
+                <img ng-src="{{article.image}}" />
+                <div class="publishing">
+                    <span class="post-category">{{article.category}}</span>
+                    <span class="pub-date">{{article.publication_date}}</span>
+                </div>
+                <p>
+                    {{article.description}}
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -14,6 +14,10 @@ bbcApp.config(['$routeProvider',
             templateUrl: 'partials/categories.html',
             controller: 'CategoriesCtrl'
         }).
+        when('/articles', {
+            templateUrl: 'partials/articles.html',
+            controller: 'ArticlesCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });
