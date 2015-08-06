@@ -23,3 +23,12 @@ img {
     max-width: 235px;
     height: auto;
 }
+.view-categories,
+.view-login
+{
+    @include background-image("main-bg.jpg");
+    color: #fff;
+}
+.controller-container{
+    @extend %clearfix;
+}

@@ -13,6 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 %button-defaults {
@@ -21,4 +22,8 @@
     line-height: $button-height;
     text-align: center;
     text-transform: uppercase;
+}
+
+%transition {
+    transition: all .25s linear;
 }
