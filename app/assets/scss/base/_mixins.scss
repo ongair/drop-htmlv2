@@ -1,0 +1,9 @@
+@mixin font-face() {
+    font-family:$font-family;
+}
+
+@mixin background-image($name, $color:null, $size:cover, $repeat:no-repeat) {
+    background: $color url("#{$path-img}/#{$name}");
+    background-repeat: $repeat;
+    background-size: $size;
+}
