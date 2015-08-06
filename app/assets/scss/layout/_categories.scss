@@ -1,0 +1,69 @@
+.view-categories{
+    @extend %clearfix;
+    padding: 15px;
+    text-align: center;
+
+    .widget-info{
+        padding: 50px 0;
+        max-width: 350px;
+        margin: 0 auto;
+
+        h1{
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 30px;
+        }
+    }
+
+}
+ul#categories{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+        width: 33%;
+        float:left;
+        text-transform: uppercase;
+        border-right: 1px solid $category-border-color;
+        border-top: 1px solid $category-border-color;
+        font-weight: 300;
+        font-size: 11px;
+        padding: 5px 10px;
+
+
+        .touch-icon{
+            display: block;
+            width: 44px;
+            height: 44px;
+            margin: 10px auto;
+            overflow: hidden;
+            background: #cec0ce;
+        }
+
+        a{
+            display: block;
+            color: #fff;
+            font-size: 13px;
+            padding: 15px 0;
+            overflow: hidden;
+        }
+
+        &:nth-child(3n){
+            border-right: none;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3){
+            border-top: none;
+        }
+
+        &:hover{
+            @extend %transition;
+            background: rgba(225,225,225,0.2);
+        }
+        &:hover .touch-icon{
+            @extend %transition;
+            background: #fff;
+        }
+    }
+
+}
