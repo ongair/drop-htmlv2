@@ -3,9 +3,10 @@ bbcControllers.controller('CategoriesCtrl', ['$scope', '$http',
 
         $scope.controllerName = 'categories';
 
-        $http.get('data/categories.json')
+        $http.get('http://drop.ongair.im/categories.json')
         .then(function(response){
-            $scope.categories =  response.data;
+            console.log(response);
+            $scope.categories =  response.data.data;
         }, function(data) {
             // log error
             console.log('An error has occured');
