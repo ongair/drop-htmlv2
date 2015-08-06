@@ -1,6 +1,6 @@
-# BBC Drop App
+## BBC Drop App
 
-# Getting started on a local environment
+### Getting started on a local environment
 
 0. If on Windows ignore `sudo` but use the elevated command prompt. Ensure to run this commands in the current project directory
 1. Install Git
@@ -15,6 +15,6 @@
 10. Visit your browser url `http://127.0.0.1:8080` modify where necessary if you changed the flags above.
 
 
-# Deploy to Production
+### Deploy to Production
 
 1. Run `gulp` (NOT READY ..More instructions coming soon)
