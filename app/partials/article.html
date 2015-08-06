@@ -1,0 +1,35 @@
+<div class="controller-container">
+
+    <ul id="articles" class="articles">
+        <li id="post_{{article.id}}">
+            <a href="#/article/{{article.id}}">
+                <img ng-src="{{article.image}}" />
+                <div class="publishing">
+                    <span class="post-category">{{article.category}}</span>
+                    <span class="pub-date">{{article.publication_date}}</span>
+                </div>
+                <h3>{{article.title}}</h3>
+
+                <div class="article-contents">
+                    <p>{{article.description}}</p>
+                    <p>{{article.description}} {{article.description}}</p>
+                    <p>{{article.description}}</p>
+                    <p>{{article.description}} {{article.description}}</p>
+                </div>
+
+
+                <ul class="article-share">
+                    <li>
+                        <i class="fa fa-heart"></i> 250
+                    </li>
+                    <li>
+                        <i class="fa fa-comment"></i> 51
+                    </li>
+                    <li>
+                        <i class="fa fa-share-alt"></i> 36
+                    </li>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

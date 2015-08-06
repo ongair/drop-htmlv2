@@ -18,6 +18,10 @@ bbcApp.config(['$routeProvider',
             templateUrl: 'partials/articles.html',
             controller: 'ArticlesCtrl'
         }).
+        when('/article/:id', {
+            templateUrl: 'partials/article.html',
+            controller: 'ArticleCtrl'
+        }).
         otherwise({
             redirectTo: '/login'
         });
