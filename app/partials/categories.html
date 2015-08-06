@@ -1,12 +1,18 @@
-<div class="categories">
-    <h1>Make Drop your own</h1>
-    <p>
-        One more thing, you can make DROP your own, follow the stories that matter to you most and keep
-    </p>
+<div class="controller-container">
 
-    <ul>
-        <li ng-repeat="category in categories" id="category_{{category.id}}">
-            <span>{{category.name}}</span>
+    <div class="widget-info">
+        <h1>Make Drop your own</h1>
+        <p>
+            One more thing, you can make DROP your own, follow the stories that matter to you most and keep
+        </p>
+    </div>
+
+    <ul id="categories">
+        <li ng-repeat="category in categories" id="cat_id_{{category.id}}">
+            <a href="#">
+                <i class="touch-icon"></i>
+                <span>{{category.name}}</span>
+            </a>
         </li>
     </ul>
 </div>
