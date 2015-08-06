@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en" ng-app="bbcDrop">
     <head>
         <meta charset="utf-8">
         <title>BBC Drop</title>
@@ -14,35 +14,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="wrapper">
-            <div class="login">
+        <div id="wrapper" ng-view>
 
-                <div class="connect-panel">
-
-                    <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
-
-                    <div class="register-panel">
-                        <h3>Register</h3>
-                        <p>
-                            One more thing, you can make DROP your own, follow the stories that matter to you most and keep
-                        </p>
-                    </div>
-
-                    <div class="text-label first-label">
-                        Login With
-                    </div>
-
-                    <a href="#" class="btn facebook"><i class="fa fa-facebook"></i> Facebook </a>
-
-                    <div class="text-label">
-                        Or
-                    </div>
-
-                    <a href="#" class="btn twitter"><i class="fa fa-twitter"></i> Twitter</a>
-                </div>
-            </div>
         </div>
+
         <script src="components/jquery/dist/jquery.min.js"></script>
         <script src="components/angular/angular.min.js"></script>
+        <script src="components/angular-route/angular-route.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers.js"></script>
     </body>
 </html>
