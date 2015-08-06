@@ -3,3 +3,4 @@
 /app/assets/css/*
 /app/assets/scss/*.css
 /app/data/
+/node_modules/
