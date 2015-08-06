@@ -1,6 +1,6 @@
 <div class="controller-container">
 
-    <ul id="articles">
+    <ul id="articles" class="articles">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
             <a href="#">
                 <img ng-src="{{article.image}}" />
@@ -8,9 +8,22 @@
                     <span class="post-category">{{article.category}}</span>
                     <span class="pub-date">{{article.publication_date}}</span>
                 </div>
+                <h3>{{article.title}}</h3>
                 <p>
                     {{article.description}}
                 </p>
+
+                <ul class="article-share">
+                    <li>
+                        <i class="fa fa-heart"></i> 250
+                    </li>
+                    <li>
+                        <i class="fa fa-comment"></i> 51
+                    </li>
+                    <li>
+                        <i class="fa fa-share-alt"></i> 36
+                    </li>
+                </div>
             </a>
         </li>
     </ul>
