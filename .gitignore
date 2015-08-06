@@ -2,3 +2,4 @@
 /app/assets/.sass-cache/
 /app/assets/css/*
 /app/assets/scss/*.css
+/app/data/
