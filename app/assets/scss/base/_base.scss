@@ -1,0 +1,25 @@
+/* Base styles */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+    @include font-face();
+    font-size: 13px;
+}
+a{
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.drop-logo{
+    text-align: center;
+    width: 100%;
+    max-width: 235px;
+    height: auto;
+}

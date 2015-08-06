@@ -1,0 +1,19 @@
+.btn{
+    @extend %button-defaults;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: $button-max-width;
+    background: #dd2515;
+    color: #fff;
+    margin: 15px auto;
+    border-radius: $button-radius;
+
+    .fa {
+        @extend %button-defaults;
+        position: absolute;
+        top: 0;
+        width: 46px;
+        font-size: 20px;
+    }
+}

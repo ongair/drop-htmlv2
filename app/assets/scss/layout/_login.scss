@@ -1,0 +1,47 @@
+.login{
+    @extend %full-container;
+    @include background-image("main-bg.jpg", $color:red);
+}
+
+.connect-panel{
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+
+    .drop-logo {
+        margin-top: 60px;
+    }
+
+    .register-panel {
+        padding: 30px 0 50px;
+    }
+
+    .facebook{
+        background: #3d5b98;
+        color: #fff;
+    }
+
+    .twitter{
+        background: #42b7e2;
+        color: #fff;
+    }
+
+    h3{
+        font-size: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin: 20px 0;
+    }
+    p{
+        font-weight: 300;
+        font-size: 13px;
+    }
+
+    .text-label{
+        text-transform: uppercase;
+    }
+
+    .first-label{
+        margin-bottom: 10px;
+    }
+}
