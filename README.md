@@ -12,7 +12,7 @@
 7. Run `gulp` to build SCSS files, and you are done!
 8. If you don't have an http server run  `npm install http-server -g` This will install a lightweight http server for Node.js
 9. Serve to http server with `http-server -a 127.0.0.1 -p 8080` You can change port and address if necessary
-10. Visit your browser url `http://127.0.0.1:8080` modify where necessary if you changed the flags above.
+10. Visit your browser url `http://127.0.0.1:8080/app/` modify where necessary if you changed the flags above.
 
 
 ### Deploy to Production
