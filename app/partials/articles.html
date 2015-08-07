@@ -1,5 +1,9 @@
 <div class="controller-container">
 
+    <div class="article-nav">
+        <div ng-include src="'partials/navbar.html'"></div>
+    </div>
+
     <ul id="articles" class="articles">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
             <a href="#/article/{{article.id}}">
