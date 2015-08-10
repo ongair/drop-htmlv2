@@ -11,7 +11,7 @@
 6. Run `bower install` to install the angular dependencies
 7. Run `gulp` to build SCSS files, and you are done!
 8. If you don't have an http server run  `npm install http-server -g` This will install a lightweight http server for Node.js
-9. To test the app while in development change to the app directory `cd app` and serve to http server with `http-server -a 127.0.0.1 -p 8080 a 3000` You can change port and address if necessary
+9. To test the app while in development change to the app directory `cd app` and serve to http server with `http-server -a 127.0.0.1 -p 8080 -a 3000` You can change port and address if necessary
 10. Visit your browser url `http://127.0.0.1:3000/` modify where necessary if you changed the flags above.
 
 
