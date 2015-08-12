@@ -1,6 +1,7 @@
 var bbcApp = angular.module('bbcApp', [
     'ngRoute',
-    'bbcControllers'
+    'bbcControllers',
+    'bbcServices'
 ]);
 
 bbcApp.config(['$routeProvider',
@@ -29,3 +30,4 @@ bbcApp.config(['$routeProvider',
 ]);
 
 var bbcControllers = angular.module('bbcControllers', []);
+var bbcServices = angular.module('bbcServices', []);
