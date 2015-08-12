@@ -14,7 +14,6 @@ bbcControllers.controller('LoginCtrl', [
                     $scope.connectedUser = true;
                     // login successful create a session and connect it to the
                     // backend to allow api requests
-                    AuthService.getProfile();
 
                 } else {
                     // show an error message
