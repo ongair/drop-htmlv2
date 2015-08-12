@@ -48,12 +48,10 @@ bbcServices.factory('AuthService', function($q) {
 
         // todo: return a nicely formated object
         getProfile: function() {
+            //console.log(authorizationResult);
             authorizationResult.me().done(function(me) {
-                console.log(me.name);
-                console.log(me.alias);
-                console.log(me.location);
-                console.log(me.raw);
-                console.log(me.id);
+                console.log(authorizationResult);
+                console.log(me);
             }).fail(function(err) {
                 //todo: when the OAuth flow failed
             });
