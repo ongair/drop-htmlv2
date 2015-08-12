@@ -15,12 +15,15 @@
             Login With
         </div>
 
-        <a href="#/categories" class="btn facebook"><i class="fa fa-facebook"></i> Facebook </a>
+        <a ng-click="authenticate('facebook')" class="btn facebook"><i class="fa fa-facebook"></i> Facebook </a>
 
         <div class="text-label">
             Or
         </div>
 
-        <a href="#/categories" class="btn twitter"><i class="fa fa-twitter"></i> Twitter</a>
+        <a ng-click="authenticate('twitter')" class="btn twitter"><i class="fa fa-twitter"></i> Twitter</a>
+
+        <a ng-click="signOut()" class="btn"><i class="fa fa-logout"></i> Logout</a>
+        
     </div>
 </div>
