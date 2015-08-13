@@ -65,3 +65,20 @@ ul.tour-carousel{
     width: 100%;
     color: #fff;
 }
+img.swipe-icon{
+    width: 100px;
+    height: auto;
+}
+.tour-end{
+    padding-top: 100px;
+}
+.btn-login{
+    @extend %button-defaults;
+    background: transparent;
+    border: 1px solid #fff;
+    max-width: 270px;
+    font-size: 14px;
+    color:#fff;
+    border-radius: 3px;
+    margin: 0 auto;
+}
