@@ -10,9 +10,9 @@
     </div>
 
     <div class="widget-info">
-        <h1>Choose new categories</h1>
+        <h1>Choose categories</h1>
         <p>
-            Tell us some of your interests
+            Tell us some of your interests so that we can personalize your stories
         </p>
     </div>
 
@@ -20,7 +20,7 @@
         <li ng-repeat="category in categories" id="cat_id_{{category.id}}">
             <a href="#/articles">
                 <i class="touch-icon">
-                    <img src="http://app.ongair.im/api{{category.image_url}}" />
+                    <img ng-src="http://drop.ongair.im/api{{category.image_url}}" />
                 </i>
                 <span>{{category.name}}</span>
             </a>
