@@ -1,4 +1,4 @@
-app.directive('wrapOwlcarousel', function () {
+appDirectives.directive('wrapOwlcarousel', function () {
     return {
         restrict: 'E',
         link: function (scope, element, attrs) {
@@ -6,4 +6,4 @@ app.directive('wrapOwlcarousel', function () {
             $(element).owlCarousel(options);
         }
     };
-});  
+});
