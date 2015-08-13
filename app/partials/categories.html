@@ -10,16 +10,18 @@
     </div>
 
     <div class="widget-info">
-        <h1>Make Drop your own</h1>
+        <h1>Choose new categories</h1>
         <p>
-            One more thing, you can make DROP your own, follow the stories that matter to you most and keep
+            Tell us some of your interests
         </p>
     </div>
 
     <ul id="categories">
         <li ng-repeat="category in categories" id="cat_id_{{category.id}}">
             <a href="#/articles">
-                <i class="touch-icon"></i>
+                <i class="touch-icon">
+                    <img src="http://app.ongair.im/api{{category.image_url}}" />
+                </i>
                 <span>{{category.name}}</span>
             </a>
         </li>
