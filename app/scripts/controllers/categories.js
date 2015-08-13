@@ -3,7 +3,7 @@ bbcControllers.controller('CategoriesCtrl', ['$scope', '$http',
 
         $scope.controllerName = 'categories';
 
-        $http.get('http://drop.ongair.im/categories.json')
+        $http.get('http://drop.ongair.im/api/categories.json')
         .then(function(response){
             console.log(response);
             $scope.categories =  response.data.data;
