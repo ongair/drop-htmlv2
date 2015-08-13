@@ -2,7 +2,9 @@ var bbcApp = angular.module('bbcApp', [
     'bbcControllers',
     'bbcServices',
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'angular-carousel',
+    'ngTouch'
 ]);
 
 bbcApp.config(function($stateProvider, $urlRouterProvider){
