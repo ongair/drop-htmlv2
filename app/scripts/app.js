@@ -15,6 +15,12 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
         controller: 'LoginCtrl'
     })
 
+    .state('tour', {
+        url: "/tour",
+        templateUrl: "partials/tour.html",
+        controller: 'TourCtrl'
+    })
+
     .state('categories', {
         url: "/categories",
         templateUrl: "partials/categories.html",
