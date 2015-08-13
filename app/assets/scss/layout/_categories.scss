@@ -4,14 +4,16 @@
     text-align: center;
 
     .widget-info{
-        padding: 50px 0;
+        padding: 30px 0 20px;
         max-width: 350px;
         margin: 0 auto;
 
         h1{
             text-transform: uppercase;
             font-weight: 300;
-            font-size: 30px;
+            font-size: 22px;
+            line-height: 1;
+            margin:15px 0 0 0;
         }
     }
 
@@ -29,24 +31,28 @@ ul#categories{
         border-top: 1px solid $category-border-color;
         font-weight: 300;
         font-size: 11px;
-        padding: 5px 10px;
 
 
         .touch-icon{
             display: block;
-            width: 44px;
-            height: 44px;
+            width: 35px;
+            height: 35px;
             margin: 10px auto;
             overflow: hidden;
             // background: #cec0ce;
         }
 
         a{
+            position: relative;
             display: block;
             color: #fff;
             font-size: 13px;
-            padding: 15px 0;
+            padding: 7px 0;
             overflow: hidden;
+        }
+
+        &.selected a{
+            background: rgba(255,255,255,0.1);
         }
 
         &:nth-child(3n){
@@ -63,6 +69,12 @@ ul#categories{
         &:hover .touch-icon{
             @extend %transition;
             // background: #fff;
+        }
+
+        .fa{
+            position: absolute;
+            top: 5px;
+            right: 5px;
         }
     }
 
