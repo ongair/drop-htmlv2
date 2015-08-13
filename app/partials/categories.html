@@ -17,12 +17,13 @@
     </div>
 
     <ul id="categories">
-        <li ng-repeat="category in categories" id="cat_id_{{category.id}}">
+        <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-class="{selected: category.enabled==true}">
             <a href="#/articles">
                 <i class="touch-icon">
                     <img ng-src="http://drop.ongair.im/api{{category.image_url}}" />
                 </i>
                 <span>{{category.name}}</span>
+                <i class="fa fa-check-square"></i>
             </a>
         </li>
     </ul>
