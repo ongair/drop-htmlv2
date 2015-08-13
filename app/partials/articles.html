@@ -6,7 +6,7 @@
 
     <ul id="articles" class="articles">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
-            <a ui-sref="article({articleId:article})">
+            <a ui-sref="article({articleId:article.id})">
                 <img ng-src="assets/img/post.jpg" />
                 <div class="publishing">
                     <span class="post-category">{{article.category}}</span>
