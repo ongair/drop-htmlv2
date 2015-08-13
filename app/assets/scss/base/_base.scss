@@ -25,7 +25,8 @@ img {
     height: auto;
 }
 .view-categories,
-.view-login
+.view-login,
+.view-tour
 {
     @include background-image("main-bg.jpg");
     color: #fff;
