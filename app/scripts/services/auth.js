@@ -5,6 +5,8 @@ appServices.factory('AuthService', function($q) {
     return {
         initialize: function() {
             //initialize OAuth.io with public key of the application
+            // dev k6_ncNlx14VMy9XUa5vK6dGzpMI
+            // production xiZX0elRQVlTTgqTlZ-XOBn-19k
             OAuth.initialize('xiZX0elRQVlTTgqTlZ-XOBn-19k', {
                 cache: true
             });
