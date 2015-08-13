@@ -1,4 +1,4 @@
-bbcControllers.controller('TourCtrl', ['$scope',
+appControllers.controller('TourCtrl', ['$scope',
     function ($scope) {
         $scope.controllerName = 'tour';
     }

@@ -1,10 +1,9 @@
 var bbcApp = angular.module('bbcApp', [
-    'bbcControllers',
-    'bbcServices',
+    'appControllers',
+    'appServices',
+    'appDirectives',
     'ui.router',
-    'ngResource',
-    'angular-carousel',
-    'ngTouch'
+    'ngResource'
 ]);
 
 bbcApp.config(function($stateProvider, $urlRouterProvider){
@@ -42,8 +41,8 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
     });
 
     $urlRouterProvider.otherwise('/tour');
-
 });
 
-var bbcControllers = angular.module('bbcControllers', []);
-var bbcServices = angular.module('bbcServices', []);
+var appControllers = angular.module('appControllers', []);
+var appServices = angular.module('appServices', []);
+var appDirectives = angular.module('appDirectives', []);

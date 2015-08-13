@@ -1,4 +1,4 @@
-bbcControllers.controller('ArticlesCtrl', ['$scope', '$http',
+appControllers.controller('ArticlesCtrl', ['$scope', '$http',
     function ($scope, $http) {
 
         $scope.controllerName = 'articles';

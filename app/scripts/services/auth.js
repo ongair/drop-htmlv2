@@ -1,4 +1,4 @@
-bbcServices.factory('AuthService', function($q) {
+appServices.factory('AuthService', function($q) {
 
     var authorizationResult = false;
 

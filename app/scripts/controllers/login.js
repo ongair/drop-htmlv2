@@ -1,4 +1,4 @@
-bbcControllers.controller('LoginCtrl', [
+appControllers.controller('LoginCtrl', [
     '$scope',
     '$http',
     'AuthService',

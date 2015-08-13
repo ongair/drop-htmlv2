@@ -1,7 +1,7 @@
-bbcControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
+appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
     function ($scope, $http, $stateParams) {
         // expect $stateParams.articleId
-        
+
         $scope.controllerName = 'article';
 
         $http.get('data/articles.json')
