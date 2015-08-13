@@ -41,7 +41,7 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
         controller: 'ArticleCtrl'
     });
 
-    $urlRouterProvider.otherwise('/articles');
+    $urlRouterProvider.otherwise('/tour');
 
 });
 
