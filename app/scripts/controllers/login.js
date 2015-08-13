@@ -2,8 +2,9 @@ bbcControllers.controller('LoginCtrl', [
     '$scope',
     '$http',
     'AuthService',
+    '$state',
 
-    function ($scope, $http, AuthService) {
+    function ($scope, $http, AuthService,$state) {
         $scope.controllerName = 'login';
 
         AuthService.initialize();
@@ -14,6 +15,7 @@ bbcControllers.controller('LoginCtrl', [
                     $scope.connectedUser = true;
                     // login successful create a session and connect it to the
                     // backend to allow api requests
+                    $state.transitionTo('articles');
 
                 } else {
                     // show an error message
