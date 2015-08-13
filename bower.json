@@ -20,6 +20,7 @@
     "normalize.css": "~3.0.3",
     "angular-route": "~1.4.0",
     "oauth-js": "~0.4.3",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular-carousel": "~0.3.12"
   }
 }
