@@ -1,33 +1,41 @@
 var bbcApp = angular.module('bbcApp', [
-    'ngRoute',
     'bbcControllers',
-    'bbcServices'
+    'bbcServices',
+    'ui.router',
+    'ngResource'
 ]);
 
-bbcApp.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/login', {
-            templateUrl: 'partials/login.html',
-            controller: 'LoginCtrl'
-        }).
-        when('/categories', {
-            templateUrl: 'partials/categories.html',
-            controller: 'CategoriesCtrl'
-        }).
-        when('/articles', {
-            templateUrl: 'partials/articles.html',
-            controller: 'ArticlesCtrl'
-        }).
-        when('/article/:id', {
-            templateUrl: 'partials/article.html',
-            controller: 'ArticleCtrl'
-        }).
-        otherwise({
-            redirectTo: '/login'
-        });
-    }
-]);
+bbcApp.config(function($stateProvider, $urlRouterProvider){
+
+    $stateProvider
+
+    .state('login', {
+        url: "/login",
+        templateUrl: "partials/login.html",
+        controller: 'LoginCtrl'
+    })
+
+    .state('categories', {
+        url: "/categories",
+        templateUrl: "partials/categories.html",
+        controller: 'CategoriesCtrl'
+    })
+
+    .state('articles', {
+        url: "/articles",
+        templateUrl: "partials/articles.html",
+        controller: 'ArticlesCtrl'
+    })
+
+    .state('article', {
+        url: "/article/:articleId",
+        templateUrl: "partials/article.html",
+        controller: 'ArticleCtrl'
+    });
+
+    $urlRouterProvider.otherwise('/articles');
+
+});
 
 var bbcControllers = angular.module('bbcControllers', []);
 var bbcServices = angular.module('bbcServices', []);
