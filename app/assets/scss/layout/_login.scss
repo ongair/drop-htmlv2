@@ -8,15 +8,15 @@
 }
 .connect-panel{
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     color: #fff;
 
     .drop-logo {
-        margin-top: 60px;
+        margin-top: 30px;
     }
 
     .register-panel {
-        padding: 30px 0 50px;
+        padding: 10px 0;
     }
 
     .facebook{
@@ -30,10 +30,11 @@
     }
 
     h3{
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 300;
         text-transform: uppercase;
-        margin: 20px 0;
+        margin: 10px 0;
+        line-height: 1;
     }
     p{
         font-weight: 300;
@@ -51,7 +52,7 @@
 
 // tour carousel
 img.swipe-icon{
-    width: 100px;
+    width: 60px;
     height: auto;
 }
 .tour-end{
