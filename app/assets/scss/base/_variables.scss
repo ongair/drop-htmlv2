@@ -10,3 +10,10 @@ $button-radius: 3px;
 $category-border-color: #9a5f78;
 
 $nav-buttons-height: 58px;
+
+// height breaks for common phones
+$break-iphone-4: '(max-height: 480px)';
+$break-iphone-5: '(max-height: 568px)';
+$break-nexus-5: '(max-height: 640px)';
+$break-iphone-6: '(max-height: 667px)';
+$break-iphone-6-plus: '(max-height: 736px)';
