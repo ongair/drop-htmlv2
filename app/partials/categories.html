@@ -1,30 +1,31 @@
 <div class="controller-container">
-
-    <div class="nav-bar">
-        <a href="#articles" class="btn-icon fixed-left">
-            <i class="fa fa-arrow-left"></i>
-        </a>
-        <a href="#" class="btn-icon fixed-right">
-            <i class="fa fa-cog"></i>
-        </a>
-    </div>
-
-    <div class="widget-info">
-        <h1>Choose categories</h1>
-        <p>
-            Tell us some of your interests so that we can personalize your stories
-        </p>
-    </div>
-
-    <ul id="categories">
-        <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-class="{selected: category.enabled==true}">
-            <a href="#/articles">
-                <i class="touch-icon">
-                    <img ng-src="http://drop.ongair.im/api{{category.image_url}}" />
-                </i>
-                <span>{{category.name}}</span>
-                <i class="fa fa-check-square"></i>
+    <div class="container-content">
+        <div class="nav-bar">
+            <a href="#articles" class="btn-icon fixed-left">
+                <i class="fa fa-arrow-left"></i>
             </a>
-        </li>
-    </ul>
+            <a href="#" class="btn-icon fixed-right">
+                <i class="fa fa-cog"></i>
+            </a>
+        </div>
+
+        <div class="widget-info">
+            <h1>Choose categories</h1>
+            <p>
+                Tell us some of your interests so that we can personalize your stories
+            </p>
+        </div>
+
+        <ul id="categories">
+            <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-class="{selected: category.enabled==true}">
+                <a href="#/articles">
+                    <i class="touch-icon">
+                        <img ng-src="http://drop.ongair.im/api{{category.image_url}}" />
+                    </i>
+                    <span>{{category.name}}</span>
+                    <i class="fa fa-check-square"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

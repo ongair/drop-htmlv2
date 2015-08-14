@@ -3,14 +3,35 @@
     padding: 15px;
     text-align: center;
 
+    .container-content{
+        max-width: 300px;
+        margin: 0 auto;
+
+        @media #{$break-iphone-6-plus} {
+            max-width: 320px;
+        }
+    }
+
+
     .widget-info{
         padding: 30px 0 20px;
-        max-width: 350px;
+        max-width: 300px;
         margin: 0 auto;
 
         @media #{$break-iphone-5} {
             margin-top:30px;
             padding-bottom: 30px;
+        }
+
+        @media #{$break-iphone-6} {
+            margin-top:40px;
+            padding-bottom: 40px;
+        }
+
+        @media #{$break-iphone-6-plus} {
+            margin-top:40px;
+            padding-bottom: 40px;
+
         }
 
         h1{
@@ -20,7 +41,7 @@
             line-height: 1;
             margin:15px 0 0 0;
 
-            @media #{$break-iphone-5} {
+            @media #{$break-iphone-6} {
                 margin-bottom:25px;
             }
         }
@@ -29,6 +50,7 @@
 
 }
 ul#categories{
+    @extend %clearfix;
     list-style: none;
     margin: 0;
     padding: 0;

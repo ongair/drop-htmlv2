@@ -13,10 +13,25 @@
 
     .drop-logo {
         margin-top: 30px;
+
+        @media #{$break-iphone-5} {
+            margin:25px 0;
+        }
+
+        @media #{$break-iphone-6} {
+            margin:40px 0;
+        }
+        @media #{$break-iphone-6-plus} {
+            margin:50px 0 40px 0;
+        }
     }
 
     .register-panel {
         padding: 10px 0;
+
+        @media #{$break-iphone-6-plus} {
+            padding:30px 0;
+        }
     }
 
     .facebook{
@@ -52,8 +67,15 @@
 
 // tour carousel
 img.swipe-icon{
-    width: 60px;
+    width: 50px;
     height: auto;
+
+    @media #{$break-iphone-6} {
+        width:60px;
+    }
+    @media #{$break-iphone-6-plus} {
+        width:60px;
+    }
 }
 .tour-end{
     padding-top: 100px;
@@ -67,4 +89,16 @@ img.swipe-icon{
     color:#fff;
     border-radius: 3px;
     margin: 0 auto;
+}
+
+.page1-intro {
+    @media #{$break-iphone-5} {
+        padding:25px 0;
+    }
+    @media #{$break-iphone-6} {
+        padding:35px 0;
+    }
+    @media #{$break-iphone-6-plus} {
+        padding:50px 0;
+    }
 }

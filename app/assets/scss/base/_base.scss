@@ -23,6 +23,14 @@ img {
     width: 100%;
     max-width: 125px;
     height: auto;
+
+    @media #{$break-iphone-6} {
+        max-width: 135px;
+    }
+
+    @media #{$break-iphone-6-plus} {
+        max-width: 150px;
+    }
 }
 .view-categories,
 .view-login,
