@@ -7,30 +7,22 @@
         <li id="post_{{article.id}}">
             <a href="#/article/{{article.id}}">
                 <img ng-src="{{article.image_url}}" />
-                <div class="publishing">
-                    <span class="post-category">{{article.category}}</span>
-                    <span class="pub-date">{{article.created_at}}</span>
-                </div>
-                <h3>{{article.title}}</h3>
 
-                <div class="article-contents">
+                <div class="article-content">
+                    <h3>{{article.title}}</h3>
+
+                    <div class="publishing">
+                        <span class="pub-date">{{article.created_at|amCalendar}}</span>
+                    </div>
+
                     <div class="summary">
                         {{article.summary}}
                     </div>
+
                     <div ng-bind-html="article.body|nl2p" class="body"></div>
+
                 </div>
 
-                <ul class="article-share">
-                    <li>
-                        <i class="fa fa-heart"></i> 250
-                    </li>
-                    <li>
-                        <i class="fa fa-comment"></i> 51
-                    </li>
-                    <li>
-                        <i class="fa fa-share-alt"></i> 36
-                    </li>
-                </div>
             </a>
         </li>
     </ul>
