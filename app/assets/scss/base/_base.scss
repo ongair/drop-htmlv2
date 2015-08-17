@@ -49,3 +49,15 @@ ul{
 }
 // fix for bootstrap cursor
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// fix for carousel indicators on white background
+.carousel-indicators{
+    position: fixed;
+}
+.carousel-indicators li {
+    background-color: #999;
+    background-color: rgba(70,70,70,.25);
+}
+.carousel-indicators .active {
+    background-color: #444;
+}
