@@ -5,7 +5,8 @@ var bbcApp = angular.module('bbcApp', [
     'appFilters',
     'ui.router',
     'ngResource',
-    'ngSanitize'
+    'ngSanitize',
+    'angularMoment'
 ]);
 
 bbcApp.config(function($stateProvider, $urlRouterProvider){
@@ -44,6 +45,8 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise('/tour');
 });
+
+
 
 var appControllers = angular.module('appControllers', []);
 var appServices = angular.module('appServices', []);
