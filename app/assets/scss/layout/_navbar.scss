@@ -15,7 +15,6 @@
         height: $nav-buttons-height;
         text-align: center;
         line-height: $nav-buttons-height;
-        background: rgba(208,208,208,0);
         color: #fff;
         font-size: 18px;
     }
@@ -30,9 +29,9 @@
 }
 .article-nav{
     .nav-bar{
-        background: #fff;
+        background: #dd2515;
         .btn-icon{
-            color: #262626;
+            color: #fff;
         }
     }
 }
