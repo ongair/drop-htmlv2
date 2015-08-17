@@ -2,8 +2,10 @@ var bbcApp = angular.module('bbcApp', [
     'appControllers',
     'appServices',
     'appDirectives',
+    'appFilters',
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'ngSanitize'
 ]);
 
 bbcApp.config(function($stateProvider, $urlRouterProvider){
@@ -46,3 +48,4 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
 var appControllers = angular.module('appControllers', []);
 var appServices = angular.module('appServices', []);
 var appDirectives = angular.module('appDirectives', []);
+var appFilters = angular.module('appFilters', []);
