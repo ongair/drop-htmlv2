@@ -14,7 +14,7 @@
     <ul id="articles" class="articles landing">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
             <a ui-sref="article({articleId:article.id})">
-                <img ng-src="assets/img/post.jpg" />
+                <img ng-src="{{article.image_url}}" />
                 <div class="publishing">
                     <span class="post-category">{{article.category}}</span>
                 </div>
