@@ -26,6 +26,7 @@
     "angular-touch": "~1.4.3",
     "angular-sanitize": "~1.4.4",
     "angular-moment": "~0.10.2",
-    "angular-loading-bar": "~0.8.0"
+    "angular-loading-bar": "~0.8.0",
+    "angular-bootstrap": "~0.13.3"
   }
 }
