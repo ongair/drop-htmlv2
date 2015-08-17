@@ -4,29 +4,20 @@
         <div ng-include src="'partials/navbar.html'"></div>
     </div>
 
-    <ul id="articles" class="articles">
+    <ul id="articles" class="articles landing">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
             <a ui-sref="article({articleId:article.id})">
                 <img ng-src="assets/img/post.jpg" />
                 <div class="publishing">
                     <span class="post-category">{{article.category}}</span>
-                    <span class="pub-date">{{article.publication_date}}</span>
                 </div>
                 <h3>{{article.title}}</h3>
                 <p>
                     {{article.summary}}
                 </p>
 
-                <ul class="article-share">
-                    <li>
-                        <i class="fa fa-heart"></i> 250
-                    </li>
-                    <li>
-                        <i class="fa fa-comment"></i> 51
-                    </li>
-                    <li>
-                        <i class="fa fa-share-alt"></i> 36
-                    </li>
+                <div class="publishing">
+                    <span class="pub-date">{{article.created_at|amDurationFormat : 'minute' }}</span>
                 </div>
             </a>
         </li>
