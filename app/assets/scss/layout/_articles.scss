@@ -2,7 +2,7 @@
 ul.articles{
     list-style: none;
     margin: 0;
-    padding: 45px 20px 20px;
+    padding: 45px 0 20px;
 
     li{
         margin: 15px 0 30px;
@@ -18,9 +18,7 @@ ul.articles{
 
         .publishing{
             color:#959595;
-            font-size: 11px;
             font-weight: bold;
-            text-transform: uppercase;
 
             .pub-date{
                 font-weight: 300;
@@ -39,6 +37,30 @@ ul.articles{
             font-weight: 400;
             margin: 0 0 10px 0;
             padding: 0;
+        }
+        .article-content{
+            padding: 10px 25px;
+            font-size: 14px;
+            line-height: 1.5;
+
+            h3{
+                font-size: 26px;
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+
+            .publishing{
+                padding-bottom: 15px;
+            }
+
+            .summary{
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+
+            p{
+                margin-bottom: 20px;
+            }
         }
     }
 }
