@@ -18,7 +18,8 @@
                 <h3>{{article.title}}</h3>
 
                 <div class="publishing">
-                    <span class="pub-date">{{article.created_at|amCalendar}}</span>
+                    <span class="pub-date">{{article.created_at|amCalendar}}</span> |
+                    <span class="category-name">{{article.category.name}}</span>
                 </div>
 
                 <div class="summary">
