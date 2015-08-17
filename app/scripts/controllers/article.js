@@ -4,10 +4,9 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
 
         $scope.controllerName = 'article';
 
-        $http.get('data/articles.json')
+        $http.get('http://drop.ongair.im/api/articles/'+$stateParams.articleId+'.json')
         .then(function(response){
-            //console.log(response);
-            $scope.article =  response.data.data[0];
+            $scope.article =  response.data;
         }, function(response) {
             // log error
         });
