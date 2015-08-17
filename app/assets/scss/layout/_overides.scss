@@ -1,6 +1,6 @@
 // overide the loading progressbar
 #loading-bar .bar {
-  background: #fff;
+    background: #fff;
 }
 #loading-bar-spinner .spinner-icon {
     position: fixed;
@@ -13,8 +13,8 @@
     margin: -20px 0 0 -20px;
 }
 #loading-bar .peg {
-  -moz-box-shadow: #2c3e50 1px 0 6px 1px;
-  -ms-box-shadow: #2c3e50 1px 0 6px 1px;
-  -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
-  box-shadow: #2c3e50 1px 0 6px 1px;
+    -moz-box-shadow: #2c3e50 1px 0 6px 1px;
+    -ms-box-shadow: #2c3e50 1px 0 6px 1px;
+    -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
+    box-shadow: #2c3e50 1px 0 6px 1px;
 }
