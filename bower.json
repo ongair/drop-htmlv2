@@ -23,6 +23,7 @@
     "angular-ui-router": "~0.2.15",
     "angular-carousel": "~0.3.12",
     "angular-resource": "~1.4.3",
-    "angular-touch": "~1.4.3"
+    "angular-touch": "~1.4.3",
+    "angular-sanitize": "~1.4.4"
   }
 }
