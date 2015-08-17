@@ -19,6 +19,7 @@ appControllers.controller('LoginCtrl', [
 
                 } else {
                     // show an error message
+                    console.log('login failed');
                 }
             });
         };
@@ -35,7 +36,7 @@ appControllers.controller('LoginCtrl', [
 
         if(AuthService.isReady()) {
             $scope.connectedUser = true;
-
+            $state.transitionTo('articles');
             // fetch the user session from the backend
             // redirect the user using the new session to articles
         }
