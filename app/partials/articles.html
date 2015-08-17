@@ -11,22 +11,20 @@
         </div>
     </div>
 
-    <div id="articles" class="articles landing">
-
-            <div ng-repeat="article in articles" id="post_{{article.id}}" class="item">
-                <a ui-sref="article({articleId:article.id})">
-                    <!-- <img ng-src="{{article.image_url}}" /> -->
-                    <img ng-src="assets/img/post.jpg" />
-                    <div class="article-content">
-                        <h3 class="landing">{{article.title}}</h3>
-
-                        <div class="summary landing">
-                            {{article.summary}}
-                        </div>
-
+    <div ng-controller="ArticlesCtrl" id="articles" class="articles landing">
+        <carousel interval="myInterval" no-wrap="noWrapSlides">
+            <slide ng-repeat="article in articles" id="post_{{article.id}}" class="item" active="slide.active">
+            <a ui-sref="article({articleId:article.id})">
+                <!-- <img ng-src="{{article.image_url}}" /> -->
+                <img ng-src="assets/img/post.jpg" />
+                <div class="article-content">
+                    <h3 class="landing">{{article.title}}</h3>
+                    <div class="summary landing">
+                        {{article.summary}}
                     </div>
-                </a>
-            </div>
-
+                </div>
+            </a>
+            </slide>
+        </carousel>
     </div>
 </div>
