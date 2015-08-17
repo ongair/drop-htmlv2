@@ -14,17 +14,15 @@
     <ul id="articles" class="articles landing">
         <li ng-repeat="article in articles" id="post_{{article.id}}">
             <a ui-sref="article({articleId:article.id})">
-                <img ng-src="{{article.image_url}}" />
-                <div class="publishing">
-                    <span class="post-category">{{article.category.name}}</span>
-                </div>
-                <h3>{{article.title}}</h3>
-                <p>
-                    {{article.summary}}
-                </p>
+                <!-- <img ng-src="{{article.image_url}}" /> -->
+                <img ng-src="assets/img/post.jpg" />
+                <div class="article-content">
+                    <h3 class="landing">{{article.title}}</h3>
 
-                <div class="publishing">
-                    <span class="pub-date">{{article.created_at|amDurationFormat : 'minute' }}</span>
+                    <div class="summary landing">
+                        {{article.summary}}
+                    </div>
+
                 </div>
             </a>
         </li>

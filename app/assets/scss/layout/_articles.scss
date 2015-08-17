@@ -4,10 +4,6 @@ ul.articles{
     margin: 0;
     padding: 43px 0 20px;
 
-    &.landing{
-        padding: 65px 20px 20px;
-    }
-
     li{
         margin: 15px 0 30px;
         a{
@@ -31,7 +27,7 @@ ul.articles{
         }
 
         h3{
-            font-size: 16px;
+            font-size: 18px;
             color: #1a1a1a;
             line-height: 1.2em;
             padding: 0;
@@ -44,7 +40,7 @@ ul.articles{
             padding: 0;
         }
         .article-content{
-            padding: 10px 25px;
+            padding: 10px 20px;
             font-size: 14px;
             line-height: 1.5;
 
@@ -52,6 +48,10 @@ ul.articles{
                 font-size: 26px;
                 line-height: 1.2;
                 margin-bottom: 15px;
+
+                &.landing{
+                    font-size: 18px;
+                }
             }
 
             .publishing{
@@ -61,6 +61,10 @@ ul.articles{
             .summary{
                 font-weight: bold;
                 margin-bottom: 25px;
+
+                &.landing{
+                    font-weight: normal;
+                }
             }
 
             p{
