@@ -12,25 +12,22 @@
 
     <ul id="articles" class="articles">
         <li id="post_{{article.id}}">
-            <a href="#/article/{{article.id}}">
-                <img ng-src="{{article.image_url}}" />
+            <img ng-src="{{article.image_url}}" />
 
-                <div class="article-content">
-                    <h3>{{article.title}}</h3>
+            <div class="article-content">
+                <h3>{{article.title}}</h3>
 
-                    <div class="publishing">
-                        <span class="pub-date">{{article.created_at|amCalendar}}</span>
-                    </div>
-
-                    <div class="summary">
-                        {{article.summary}}
-                    </div>
-
-                    <div ng-bind-html="article.body|nl2p" class="body"></div>
-
+                <div class="publishing">
+                    <span class="pub-date">{{article.created_at|amCalendar}}</span>
                 </div>
 
-            </a>
+                <div class="summary">
+                    {{article.summary}}
+                </div>
+
+                <div ng-bind-html="article.body|nl2p" class="body"></div>
+
+            </div>
         </li>
     </ul>
 </div>
