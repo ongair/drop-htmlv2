@@ -10,8 +10,8 @@
         </div>
     </div>
 
-    <ul id="articles" class="articles">
-        <li id="post_{{article.id}}">
+    <div id="articles" class="articles">
+        <div id="post_{{article.id}}" class="item">
             <img ng-src="{{article.image_url}}" />
 
             <div class="article-content">
@@ -29,6 +29,6 @@
                 <div ng-bind-html="article.body|nl2p" class="body"></div>
 
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>

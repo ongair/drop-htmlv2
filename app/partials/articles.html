@@ -11,20 +11,22 @@
         </div>
     </div>
 
-    <ul id="articles" class="articles landing">
-        <li ng-repeat="article in articles" id="post_{{article.id}}">
-            <a ui-sref="article({articleId:article.id})">
-                <!-- <img ng-src="{{article.image_url}}" /> -->
-                <img ng-src="assets/img/post.jpg" />
-                <div class="article-content">
-                    <h3 class="landing">{{article.title}}</h3>
+    <div id="articles" class="articles landing">
 
-                    <div class="summary landing">
-                        {{article.summary}}
+            <div ng-repeat="article in articles" id="post_{{article.id}}" class="item">
+                <a ui-sref="article({articleId:article.id})">
+                    <!-- <img ng-src="{{article.image_url}}" /> -->
+                    <img ng-src="assets/img/post.jpg" />
+                    <div class="article-content">
+                        <h3 class="landing">{{article.title}}</h3>
+
+                        <div class="summary landing">
+                            {{article.summary}}
+                        </div>
+
                     </div>
+                </a>
+            </div>
 
-                </div>
-            </a>
-        </li>
-    </ul>
+    </div>
 </div>

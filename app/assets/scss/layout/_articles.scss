@@ -1,10 +1,10 @@
 // article listing
-ul.articles{
+.articles{
     list-style: none;
     margin: 0;
     padding: 43px 0 20px;
 
-    li{
+    .item{
         margin: 15px 0 30px;
         a{
             display: block;
