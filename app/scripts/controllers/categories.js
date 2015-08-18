@@ -5,7 +5,6 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
 
         $http.get('http://drop.ongair.im/api/categories.json')
         .then(function(response){
-            console.log(response);
             $scope.categories =  response.data.data;
         }, function(data) {
             // log error
@@ -34,12 +33,14 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
         }
 
         $scope.updatePreferences = function(categories){
-            var myCategories = [];
+            var myCategories = {
+                'categories': []
+            };
             angular.forEach(categories, function(category,key){
                 if(category.selected == true){
                     this.push(category.id);
                 }
-            }, myCategories);
+            }, myCategories.categories);
 
             console.log(myCategories);
             $http.post('http://drop.ongair.im/api/auth/personalize',myCategories)
