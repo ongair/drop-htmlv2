@@ -1,4 +1,4 @@
-/app/components/
+/app/bower_components/
 /app/assets/.sass-cache/
 /app/assets/css/*
 /app/assets/scss/*.css
