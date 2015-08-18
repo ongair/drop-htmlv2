@@ -4,8 +4,8 @@
             <a href="#articles" class="btn-icon fixed-left">
                 <i class="fa fa-arrow-left"></i>
             </a>
-            <a href="#" class="btn-icon fixed-right">
-                <i class="fa fa-cog"></i>
+            <a ng-click="signOut" class="btn-icon fixed-right">
+                <i class="fa fa-sign-out"></i>
             </a>
         </div>
 
@@ -17,13 +17,12 @@
         </div>
 
         <ul id="categories">
-            <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-class="{selected: category.enabled==true}">
+            <li ng-repeat="category in categories" id="cat_id_{{category.id}}">
                 <a href="#/articles">
                     <i class="touch-icon">
                         <img ng-src="http://drop.ongair.im/api{{category.image_url}}" />
                     </i>
                     <span>{{category.name}}</span>
-                    <i class="fa fa-check-square"></i>
                 </a>
             </li>
         </ul>
