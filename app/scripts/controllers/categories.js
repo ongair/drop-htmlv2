@@ -23,5 +23,15 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
             // end the backend session
             // somewhere redirect the user to login
         }
+
+        $scope.toggleActivation = function(category) {
+            if(category.selected == true){
+                category.selected = false;
+            }
+            else {
+                category.selected = true;
+            }
+        }
+
     }
 ]);

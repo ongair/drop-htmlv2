@@ -62,8 +62,9 @@ ul#categories{
         border-right: 1px solid $category-border-color;
         border-top: 1px solid $category-border-color;
         font-weight: 300;
-        font-size: 11px;
-
+        font-size: 13px;
+        cursor: pointer;
+        padding: 7px 0;
 
         .touch-icon{
             display: block;
@@ -71,20 +72,11 @@ ul#categories{
             height: 35px;
             margin: 10px auto;
             overflow: hidden;
-            // background: #cec0ce;
+            opacity: 0.5;
         }
 
-        a{
-            position: relative;
-            display: block;
-            color: #fff;
-            font-size: 13px;
-            padding: 7px 0;
-            overflow: hidden;
-        }
-
-        &.selected a{
-            background: rgba(255,255,255,0.1);
+        &.selected-true .touch-icon{
+            opacity: 1;
         }
 
         &:nth-child(3n){
@@ -92,21 +84,6 @@ ul#categories{
         }
         &:nth-child(1), &:nth-child(2), &:nth-child(3){
             border-top: none;
-        }
-
-        &:hover{
-            @extend %transition;
-            // background: rgba(225,225,225,0.2);
-        }
-        &:hover .touch-icon{
-            @extend %transition;
-            // background: #fff;
-        }
-
-        .fa{
-            position: absolute;
-            top: 5px;
-            right: 5px;
         }
     }
 
