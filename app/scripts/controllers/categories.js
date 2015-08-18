@@ -1,4 +1,4 @@
-appControllers.controller('CategoriesCtrl', ['$scope', '$http',
+appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$state',
     function ($scope, $http) {
 
         $scope.controllerName = 'categories';
@@ -12,5 +12,16 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http',
             console.log('An error has occured');
             console.log(data);
         });
+
+        //sign out clears the OAuth cache, the user will have to reauthenticate when returning
+        $scope.signOut = function() {
+            AuthService.clearCache();
+            $scope.connectedUser = false
+            console.log('loged out');
+            $state.transitionTo('login');
+            // todo:
+            // end the backend session
+            // somewhere redirect the user to login
+        }
     }
 ]);
