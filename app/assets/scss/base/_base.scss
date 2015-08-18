@@ -10,7 +10,8 @@ body{
     @include font-face();
     font-size: 13px;
 }
-a{
+a, a:hover
+{
     text-decoration: none;
     cursor: pointer;
 }

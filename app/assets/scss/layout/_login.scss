@@ -99,6 +99,10 @@ img.swipe-icon{
     border-radius: 3px;
     margin: 0 auto;
 }
+.btn-customize:hover,
+.btn-explore:hover{
+    color: #fff;
+}
 
 .page1-intro {
     @media #{$break-iphone-5} {
