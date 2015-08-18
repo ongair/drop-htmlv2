@@ -9,14 +9,46 @@ appControllers.controller('LoginCtrl', [
 
         AuthService.initialize();
 
+        $scope.connectUser = function(authorizationResult){
+            if(authorizationResult){
+                authorizationResult.me().done(function(me) {
+                    var user = {
+                        'name' : me.name,
+                        'provider': authorizationResult.provider,
+                        'uid':me.id,
+                        'access_token': authorizationResult.oauth_token
+                    }
+
+                    $http.post('http://drop.ongair.im/api/auth/sign_in',user)
+                    .then(function(response){
+                        if(response.data.success == true){
+                            $scope.connectedUser = true;
+                            if(response.data.created == true){
+                                $state.transitionTo('customize');
+                            } else {
+                                $state.transitionTo('articles');
+                            }
+                        } else {
+                            console.log('server connect failed');
+                            console.log(response.data);
+                        }
+
+                    }, function(data) {
+                        // log error
+                        console.log('An error has occured');
+                        console.log(data);
+                    });
+
+                }).fail(function(err) {
+                    //todo: when the OAuth flow failed
+                });
+            }
+        }
+
         $scope.authenticate = function(provider) {
             AuthService.authenticate(provider).then(function() {
                 if (AuthService.isReady()) {
-                    $scope.connectedUser = true;
-                    // login successful create a session and connect it to the
-                    // backend to allow api requests
-                    $state.transitionTo('articles');
-
+                    $scope.connectUser(AuthService.isReady());
                 } else {
                     // show an error message
                     console.log('login failed');
@@ -24,21 +56,9 @@ appControllers.controller('LoginCtrl', [
             });
         };
 
-        //sign out clears the OAuth cache, the user will have to reauthenticate when returning
-        $scope.signOut = function() {
-            AuthService.clearCache();
-            $scope.connectedUser = false
-            console.log('loged out');
-            // todo:
-            // end the backend session
-            // somewhere redirect the user to login
-        }
-
         if(AuthService.isReady()) {
             $scope.connectedUser = true;
-            $state.transitionTo('categories');
-            // fetch the user session from the backend
-            // redirect the user using the new session to articles
+            $scope.connectUser(AuthService.isReady());
         }
 
     }
