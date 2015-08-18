@@ -33,5 +33,24 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
             }
         }
 
+        $scope.updatePreferences = function(categories){
+            var myCategories = [];
+            angular.forEach(categories, function(category,key){
+                if(category.selected == true){
+                    this.push(category.id);
+                }
+            }, myCategories);
+
+            console.log(myCategories);
+            $http.post('http://drop.ongair.im/api/auth/personalize',myCategories)
+            .then(function(response){
+                // save was successful
+                console.log(response);
+            }, function(error){
+                // show error
+                console.log(error);
+            });
+        }
+
     }
 ]);
