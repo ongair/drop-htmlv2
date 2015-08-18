@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div ng-controller="ArticlesCtrl" id="articles" class="articles landing">
+    <div id="articles" class="articles landing">
         <carousel interval="myInterval" no-wrap="noWrapSlides">
             <slide ng-repeat="article in articles" active="article.active">
             <a ui-sref="article({articleId:article.id})">
