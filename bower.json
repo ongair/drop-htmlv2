@@ -15,19 +15,11 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "angular": "~1.4.3",
     "fontawesome": "~4.4.0",
     "normalize.css": "~3.0.3",
-    "angular-route": "~1.4.0",
     "oauth-js": "~0.4.3",
     "angular-ui-router": "~0.2.15",
-    "angular-resource": "~1.4.3",
-    "angular-touch": "~1.4.3",
-    "angular-sanitize": "~1.4.4",
     "angular-moment": "~0.10.2",
-    "angular-loading-bar": "~0.8.0",
-    "angular-bootstrap": "~0.13.3",
-    "angular-animate": "~1.4.4",
-    "bootstrap": "~3.3.5"
+    "angular-loading-bar": "~0.8.0"
   }
 }
