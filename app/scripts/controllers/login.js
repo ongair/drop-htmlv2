@@ -36,7 +36,7 @@ appControllers.controller('LoginCtrl', [
 
         if(AuthService.isReady()) {
             $scope.connectedUser = true;
-            $state.transitionTo('articles');
+            $state.transitionTo('categories');
             // fetch the user session from the backend
             // redirect the user using the new session to articles
         }
