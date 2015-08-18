@@ -29,8 +29,8 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
         controller: 'TourCtrl'
     })
 
-    .state('categories', {
-        url: "/categories",
+    .state('customize', {
+        url: "/customize",
         templateUrl: "partials/categories.html",
         controller: 'CategoriesCtrl'
     })
