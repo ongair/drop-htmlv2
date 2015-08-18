@@ -1,4 +1,7 @@
 var bbcApp = angular.module('bbcApp', [
+    'ngAnimate',
+    'ngTouch',
+    'ui.bootstrap',
     'appControllers',
     'appServices',
     'appDirectives',
@@ -7,9 +10,7 @@ var bbcApp = angular.module('bbcApp', [
     'ngResource',
     'ngSanitize',
     'angularMoment',
-    'angular-loading-bar',
-    'ui.bootstrap',
-    'ngTouch'
+    'angular-loading-bar'
 ]);
 
 bbcApp.config(function($stateProvider, $urlRouterProvider){
