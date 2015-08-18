@@ -13,7 +13,7 @@
 
     <div ng-controller="ArticlesCtrl" id="articles" class="articles landing">
         <carousel interval="myInterval" no-wrap="noWrapSlides">
-            <slide ng-repeat="article in articles" id="post_{{article.id}}" class="item" active="slide.active">
+            <slide ng-repeat="article in articles" id="post_{{article.id}}" class="item" active="article.active">
             <a ui-sref="article({articleId:article.id})">
                 <!-- <img ng-src="{{article.image_url}}" /> -->
                 <img ng-src="assets/img/post.jpg" />
