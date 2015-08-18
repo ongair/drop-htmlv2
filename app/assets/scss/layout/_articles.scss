@@ -80,6 +80,9 @@
 ul.article-share{
     @extend %inline-list;
     cursor: default;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
 
     .fa{
         margin-right:5px;
