@@ -43,7 +43,7 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
             }, myCategories.categories);
 
             console.log(myCategories);
-            $http.post('http://drop.ongair.im/api/auth/personalize',myCategories)
+            $http.post('http://drop.ongair.im/api/auth/personalize.json',myCategories)
             .then(function(response){
                 // save was successful
                 console.log(response);
