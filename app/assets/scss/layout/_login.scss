@@ -78,9 +78,18 @@ img.swipe-icon{
     }
 }
 .tour-end{
-    padding-top: 100px;
+    padding-top: 60px;
 }
-.btn-login{
+.btn-customize{
+    @extend %button-defaults;
+    background: #e31c27;
+    max-width: 270px;
+    font-size: 14px;
+    color:#fff;
+    border-radius: 3px;
+    margin: 0 auto 40px;
+}
+.btn-explore{
     @extend %button-defaults;
     background: transparent;
     border: 1px solid #fff;
