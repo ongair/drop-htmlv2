@@ -7,7 +7,7 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http',
 
         $http.get('http://drop.ongair.im/api/articles.json')
         .then(function(response){
-            $scope.articles =  response.data.data;
+            var slides = $scope.articles =  response.data.data;
         }, function(data) {
             // log error
         });
