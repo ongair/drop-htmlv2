@@ -1,48 +1,47 @@
 <div class="controller-container">
-<wrap-owlcarousel class="owl-carousel"
-    data-options="{slideSpeed : 300, paginationSpeed : 400, singleItem : true}"
-    >
 
-    <div class="item">
-        <div class="connect-panel">
-            <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
-            <div class="register-panel">
-                <h3>Welcome to the Drop</h3>
-                <div class="page1-intro">
-                    <p>Tired of getting news you don't care about?</p>
-                    <p>Want to have the drop on the latest news, well you've come to the right place.</p>
-                    <p>Take our easy tour.</p>
+<div class="owl-carousel" ng-controller="ArticlesCtrl" id="articles" class="articles landing">
+    <carousel  interval="0" no-wrap="false">
+        <slide class="item">
+            <div class="connect-panel">
+                <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
+                <div class="register-panel">
+                    <h3>Welcome to the Drop</h3>
+                    <div class="page1-intro">
+                        <p>Tired of getting news you don't care about?</p>
+                        <p>Want to have the drop on the latest news, well you've come to the right place.</p>
+                        <p>Take our easy tour.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </slide>
 
-    <div class="item">
-        <div class="connect-panel">
-            <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
-            <div class="register-panel page-2-steps">
-                <h3>How it Works</h3>
-                <p>Swipe left for more Stories</p>
-                <img src="assets/img/swipe-left.png" alt="" class="swipe-icon" />
-                <p>Swipe up on a Story to read it</p>
-                <img src="assets/img/swipe-up.png" alt="" class="swipe-icon" />
-            </div>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="connect-panel">
-            <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
-            <div class="register-panel">
-                <h3>You are ready for the Drop</h3>
-                <p>So that we're able to make sure we're giving you the best drops, you need to create a account.</p>
-
-                <div class="tour-end">
-                    <a ui-sref="login" class="btn-login">Lets Go</a>
+        <slide class="item">
+            <div class="connect-panel">
+                <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
+                <div class="register-panel page-2-steps">
+                    <h3>How it Works</h3>
+                    <p>Swipe left for more Stories</p>
+                    <img src="assets/img/swipe-left.png" alt="" class="swipe-icon" />
+                    <p>Swipe up on a Story to read it</p>
+                    <img src="assets/img/swipe-up.png" alt="" class="swipe-icon" />
                 </div>
-
             </div>
-        </div>
-    </div>
+        </slide>
 
-</wrap-owlcarousel>
+        <slide class="item">
+            <div class="connect-panel">
+                <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
+                <div class="register-panel">
+                    <h3>You are ready for the Drop</h3>
+                    <p>So that we're able to make sure we're giving you the best drops, you need to create a account.</p>
+
+                    <div class="tour-end">
+                        <a ui-sref="login" class="btn-login">Lets Go</a>
+                    </div>
+
+                </div>
+            </div>
+        </slide>
+    </carousel>
+</div>
