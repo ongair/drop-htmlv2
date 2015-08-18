@@ -13,14 +13,14 @@
 
     <div ng-controller="ArticlesCtrl" id="articles" class="articles landing">
         <carousel interval="myInterval" no-wrap="noWrapSlides">
-            <slide ng-repeat="article in articles" id="post_{{article.id}}" class="item" active="article.active">
-            <a ui-sref="article({articleId:article.id})">
+            <slide ng-repeat="slide in articles" active="slide.active">
+            <a ui-sref="article({articleId:slide.id})">
                 <!-- <img ng-src="{{article.image_url}}" /> -->
                 <img ng-src="assets/img/post.jpg" />
                 <div class="article-content">
-                    <h3 class="landing">{{article.title}}</h3>
+                    <h3 class="landing">Test title{{slide.title}}</h3>
                     <div class="summary landing">
-                        {{article.summary}}
+                        {{slide.summary}}
                     </div>
                 </div>
             </a>
