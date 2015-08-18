@@ -43,17 +43,21 @@
         background: #42b7e2;
         color: #fff;
     }
+    h2{
+        font-size: 3.5rem;
+        font-weight: 100;
+        line-height: 1.4em;
+    }
 
     h3{
-        font-size: 24px;
-        font-weight: 300;
-        text-transform: uppercase;
+        font-size: 2.7rem;
+        font-weight: 100;
         margin: 10px 0;
-        line-height: 1;
+        line-height: 1.2em;
     }
     p{
         font-weight: 300;
-        font-size: 13px;
+        font-size: 1.25em;
     }
 
     .text-label{
@@ -67,15 +71,43 @@
 
 // tour carousel
 img.swipe-icon{
-    width: 50px;
+    width: 100px;
     height: auto;
 
     @media #{$break-iphone-6} {
-        width:60px;
+        width:100px;
     }
     @media #{$break-iphone-6-plus} {
-        width:60px;
+        width:100px;
     }
+}
+img.swipe-icon-big{
+    width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+
+    @media #{$break-iphone-6} {
+        width:160px;
+    }
+    @media #{$break-iphone-6-plus} {
+        width:160px;
+    }
+}
+img.swipe-up-icon-big{
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+} 
+.col-sm-4{
+    width: 30%;
+    float: left;
+    font-size: 1.5em;
+}
+.col-sm-8{
+    width: 70%;
+    float: left;
+    text-align: left;
+    line-height: 1.5em;
 }
 .tour-end{
     padding-top: 60px;
