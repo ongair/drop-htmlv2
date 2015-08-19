@@ -29,6 +29,18 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
         controller: 'TourCtrl'
     })
 
+    .state('dropping', {
+        url: "/dropping",
+        templateUrl: "partials/dropping.html",
+        controller: 'DroppingCtrl'
+    })
+
+    .state('share', {
+        url: "/share",
+        templateUrl: "partials/share.html",
+        controller: 'ShareCtrl'
+    })
+
     .state('categories', {
         url: "/categories",
         templateUrl: "partials/categories.html",

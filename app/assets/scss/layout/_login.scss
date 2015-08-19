@@ -77,7 +77,10 @@
         margin-bottom: 10px;
     }
 }
-
+//loading - dropping
+.dropping{
+    margin-top: 15em;
+}
 // tour carousel
 img.swipe-icon{
     width: 100px;
@@ -88,6 +91,17 @@ img.swipe-icon{
     }
     @media #{$break-iphone-6-plus} {
         width:100px;
+    }
+}
+img.swipe-icon-small{
+    width: 50px;
+    height: auto;
+
+    @media #{$break-iphone-6} {
+        width:50px;
+    }
+    @media #{$break-iphone-6-plus} {
+        width:50px;
     }
 }
 img.swipe-icon-big{
@@ -120,7 +134,7 @@ img.swipe-up-icon-big{
     line-height: 1.5em;
 }
 .tour-end{
-    padding-top: 60px;
+    padding-top: 30px;
     p{  clear: both;
         display: block;
         overflow: hidden;
