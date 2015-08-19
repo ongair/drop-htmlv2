@@ -10,7 +10,18 @@
         </div>
     </div>
 
-    <div id="articles" class="articles">
+    <div class="navigation-widget like-panel" style="width:{{translateX}}px; min-width:{{articleLeft}}%">
+        <div class="widget-label">Like</div>
+    </div>
+
+    <div
+        id="articles"
+        class="articles article-widget"
+        hm-dragstart="dragStart($event, 'horizontal')"
+        hm-drag="dragging($event, 'horizontal')"
+        hm-dragend="dragEnd($event, 'horizontal')"
+        style="transform: translate({{translateX}}px,0); left:{{articleLeft}}%;"
+    >
         <div id="post_{{article.id}}" class="item">
             <!-- <img ng-src="{{article.image_url}}" /> -->
             <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
@@ -35,9 +46,9 @@
 
     <div
         class="share-widget"
-        hm-dragstart="dragStart($event)"
-        hm-drag="dragging($event)"
-        hm-dragend="dragEnd($event)"
+        hm-dragstart="dragStart($event, 'verticle')"
+        hm-drag="dragging($event, 'verticle')"
+        hm-dragend="dragEnd($event, 'verticle')"
         hm-tap="toggleDrawer"
         style="transform: translate(0,{{translateY}}px); margin-top:{{drawerOffset}}px; top:{{drawerTop}}%;"
     >

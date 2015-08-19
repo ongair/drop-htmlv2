@@ -11,6 +11,7 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
             // log error
         });
 
+        // verticle bearings
         $scope.drawerOffset = -70;
         $scope.drawerTop = 100;
         $scope.translateY = 0;
@@ -18,25 +19,56 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
         $scope.dragInProgress = false;
         $scope.drawerOpen = false;
 
-        $scope.dragStart = function($event) {
-            $scope.startY = $scope.translateY;
+        // horizontal bearings
+        $scope.translateX = 0;
+        $scope.startX = $scope.translateX;
+        $scope.articleLeft = 0;
+        $scope.panelWidth = 0;
+
+        $scope.dragStart = function($event, direction) {
+            if(direction == 'verticle') {
+                $scope.startY = $scope.translateY;
+            } else {
+                $scope.startX = $scope.translateX;
+                $scope.drawerOffset = 0;
+            }
+
             $scope.dragInProgress = true;
         }
 
-        $scope.dragging = function($event) {
-            if($scope.dragInProgress) {
-                $scope.translateY = $scope.startY + Math.floor($event.deltaY);
-            }
+        $scope.dragging = function($event, direction) {
             $event.preventDefault()
+
+            if(!$scope.dragInProgress) {
+                return;
+            }
+
+            if(direction == 'verticle') {
+                $scope.translateY = $scope.startY + Math.floor($event.deltaY);
+            } else {
+                $scope.translateX = $scope.startX + Math.floor($event.deltaX);
+            }
         }
 
-        $scope.dragEnd = function($event) {
-            if($scope.translateY > $scope.startY){
-                $scope.closeDrawer();
+        $scope.dragEnd = function($event, direction) {
+
+            if(direction == 'verticle') {
+                if($scope.translateY > $scope.startY){
+                    $scope.closeDrawer();
+                } else {
+                    $scope.openDrawer();
+                }
             } else {
-                $scope.openDrawer();
+                if($scope.translateX > $scope.startX){
+                    $scope.likeArticle();
+                } else {
+                    $scope.skipArticle();
+                }
+                $scope.drawerOffset = 70;
             }
+
             $scope.startY = $scope.translateY;
+            $scope.startX = $scope.translateX;
             $scope.dragInProgress = false;
         }
 
@@ -60,6 +92,15 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
             $scope.drawerOffset = 0;
             $scope.drawerOpen = true;
             $scope.translateY = 0;
+        }
+
+        $scope.likeArticle = function() {
+            $scope.translateX = 0;
+            $scope.articleLeft = 100;
+        }
+
+        $scope.skipArticle = function() {
+            console.log('skip article');
         }
     }
 ]);
