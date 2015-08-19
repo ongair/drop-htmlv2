@@ -4,7 +4,7 @@
     text-align: center;
 
     .container-content{
-        max-width: 300px;
+        max-width: 400px;
         margin: 0 auto;
 
         @media #{$break-iphone-6-plus} {
@@ -63,7 +63,7 @@ ul#categories{
         border-top: 1px solid $category-border-color;
         font-weight: 300;
         font-size: 11px;
-
+        word-break: break-all;
 
         .touch-icon{
             display: block;

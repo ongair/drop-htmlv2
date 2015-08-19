@@ -9,7 +9,7 @@
 
 .connect-panel{
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 10%;
     color: #fff;
 
     .drop-logo {
@@ -58,14 +58,14 @@
     }
 
     h3{
-        font-size: 2.7rem;
+        font-size: 3em;
         font-weight: 100;
         margin: 10px 0;
         line-height: 1.2em;
         color: #fff;
     }
     p{
-        font-weight: 300;
+        font-weight: 200;
         font-size: 1.25em;
     }
 
@@ -134,11 +134,11 @@ img.swipe-up-icon-big{
     line-height: 1.5em;
 }
 .tour-end{
-    padding-top: 30px;
+    padding-top: 1.5em;
     p{  clear: both;
         display: block;
         overflow: hidden;
-        margin: 10px auto;
+        margin: 1.5em auto;
         width: 60%;
         span{float: left; width: 30%}
         .border{

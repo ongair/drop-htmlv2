@@ -58,11 +58,11 @@ ul{
     position: fixed;
 }
 .carousel-indicators li {
-    background-color: #999;
-    background-color: rgba(70,70,70,.25);
+    border:none;
+    background-color: rgba(255,255,255,0.6);
 }
 .carousel-indicators .active {
-    background-color: #444;
+    background-color: rgba(255,255,255,1);
 }
 .carousel-control{
     visibility: hidden;
