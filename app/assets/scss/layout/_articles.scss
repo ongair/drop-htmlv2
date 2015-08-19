@@ -77,30 +77,49 @@
 }
 
 // share widget
-ul.article-share{
-    @extend %inline-list;
-    cursor: default;
-    text-align: center;
-    font-size: 18px;
-    padding-top: 10px;
+.share-widget{
+    @extend %noselect;
 
-    .fa{
-        margin-right:5px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+
+    .share-summary{
+        @extend %box-shadow;
+
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 100%;
+        height: 70px;
+        cursor: pointer;
+        padding: 10px;
+        color: #a7a9ac;
+
+        .share-counter{
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 70px;
+            width: 75px;
+            line-height: 70px;
+            font-size: 26px;
+        }
+
+        .fa{
+            color: #00aeef;
+        }
+        .share-text{
+            padding-left: 100px;
+            max-width: 320px;
+            font-size: 15px;
+            line-height: 1.2;
+            margin-top: 7px;
+        }
     }
 
-    .fa-heart{
-        color: #dd2515;
-    }
-
-    .fa-comment{
-        color: #228150;
-    }
-
-    .fa-share-alt{
-        color: #00aeef;
-    }
-
-    li{
-        margin-right: 15px;
-    }
 }
