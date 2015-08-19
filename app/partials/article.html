@@ -29,17 +29,29 @@
 
                 <div ng-bind-html="article.body|nl2p" class="body"></div>
 
-                <ul class="article-share">
-                    <li>
-                        <i class="fa fa-heart"></i> 250
-                    </li>
-                    <li>
-                        <i class="fa fa-comment"></i> 51
-                    </li>
-                    <li>
-                        <i class="fa fa-share-alt"></i> 36
-                    </li>
-                </ul>
+                <div
+                    class="share-widget"
+                    hm-dragstart="dragStart($event)"
+                    hm-drag="dragging($event)"
+                    hm-dragend="dragEnd($event)"
+                    hm-tap="toggleDrawer"
+                    style="transform: translate(0,{{translateY}}px); margin-top:{{drawerOffset}}px; top:{{drawerTop}}%;"
+                >
+
+                    <div class="share-summary" >
+                        <div class="share-inner">
+                            <div class="share-counter">
+                                <i class="fa fa-share-alt"></i>
+                                51K
+                            </div>
+
+                            <div class="share-text">
+                                Swipe up to share this story with your friends
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
                 <div class="bottom-bar">
 
