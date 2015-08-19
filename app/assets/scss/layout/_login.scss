@@ -6,7 +6,7 @@
     max-width: $container-width;
     margin: 0 auto;
 }
-#articles{
+
 .connect-panel{
     text-align: center;
     padding: 10px 20px;
@@ -94,6 +94,7 @@ img.swipe-icon-big{
     width: 160px;
     height: auto;
     margin-bottom: 20px;
+    margin-top: 3em;
 
     @media #{$break-iphone-6} {
         width:160px;
@@ -134,7 +135,7 @@ img.swipe-up-icon-big{
         }
     }
 }
-}
+
 .btn-customize{
     @extend %button-defaults;
     background: #e31c27;
