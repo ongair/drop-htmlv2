@@ -1,5 +1,5 @@
 appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$state',
-    function ($scope, $http) {
+    function ($scope, $http, $state) {
 
         $scope.controllerName = 'categories';
 
@@ -44,12 +44,11 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
                 }
             }, myCategories.categories);
 
-            // update user selected categories
-            $http.post('http://drop.ongair.im/api/auth/personalize',myCategories)
+            $http.post('http://drop.ongair.im/api/auth/personalize.json',myCategories)
             .then(function(response){
                 // save was successful
-                $state.transitionTo('articles');
                 console.log(response);
+                $state.transitionTo('articles');
             }, function(error){
                 // show error
                 $state.transitionTo('articles');
