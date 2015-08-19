@@ -23,7 +23,11 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
         $scope.translateX = 0;
         $scope.startX = $scope.translateX;
         $scope.articleLeft = 0;
+        $scope.articleRight = 0;
         $scope.panelWidth = 0;
+        $scope.maxWidth = 100;
+        $scope.skipVisible = 'hidden';
+        $scope.likeVisible = 'hidden';
 
         $scope.dragStart = function($event, direction) {
             if(direction == 'verticle') {
@@ -47,6 +51,16 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
                 $scope.translateY = $scope.startY + Math.floor($event.deltaY);
             } else {
                 $scope.translateX = $scope.startX + Math.floor($event.deltaX);
+
+                if($scope.translateX < 0) {
+                    $scope.likeVisible = 'hidden';
+                    $scope.skipVisible = 'visible';
+                    $scope.panelWidth = -1 * $scope.translateX;
+                } else {
+                    $scope.likeVisible = 'visible';
+                    $scope.skipVisible = 'hidden';
+                    $scope.panelWidth = $scope.translateX;
+                }
             }
         }
 
@@ -97,10 +111,15 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
         $scope.likeArticle = function() {
             $scope.translateX = 0;
             $scope.articleLeft = 100;
+            $scope.articleRight = 0;
+            $scope.maxWidth = 0;
         }
 
         $scope.skipArticle = function() {
-            console.log('skip article');
+            $scope.translateX = 0;
+            $scope.articleLeft = 0;
+            $scope.articleRight = 100;
+            $scope.maxWidth = 0;
         }
     }
 ]);

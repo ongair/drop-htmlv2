@@ -10,8 +10,12 @@
         </div>
     </div>
 
-    <div class="navigation-widget like-panel" style="width:{{translateX}}px; min-width:{{articleLeft}}%">
+    <div class="navigation-widget like-panel" style="width:{{panelWidth}}px; min-width:{{articleLeft}}%; visibility:{{likeVisible}};">
         <div class="widget-label">Like</div>
+    </div>
+
+    <div class="navigation-widget skip-panel" style="width:{{panelWidth}}px; min-width:{{articleRight}}%; visibility:{{skipVisible}};">
+        <div class="widget-label">Skip</div>
     </div>
 
     <div
@@ -20,7 +24,7 @@
         hm-dragstart="dragStart($event, 'horizontal')"
         hm-drag="dragging($event, 'horizontal')"
         hm-dragend="dragEnd($event, 'horizontal')"
-        style="transform: translate({{translateX}}px,0); left:{{articleLeft}}%;"
+        style="transform: translate({{translateX}}px,0); left:{{articleLeft}}%; right:{{articleRight}}%;"
     >
         <div id="post_{{article.id}}" class="item">
             <!-- <img ng-src="{{article.image_url}}" /> -->

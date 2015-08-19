@@ -132,12 +132,14 @@
 
     &.like-panel{
         left: 0;
+        right: auto;
         background: #009999;
     }
 
     &.skip-panel{
         right: 0;
-        background: #009999;
+        left: auto;
+        background: #fb4238;
     }
 }
 .widget-label{
@@ -155,4 +157,5 @@
 .article-widget{
     @extend %fixed-position;
     background: #fff;
+    overflow: hidden;
 }
