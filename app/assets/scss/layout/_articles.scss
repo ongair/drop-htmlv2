@@ -110,12 +110,19 @@ ul.article-share{
     position: absolute;
     height: 100%;
     max-width: 415px;
+    width: 100%;
+    img.swipe-icon-big{
+        margin-top: 0;
+    }
+    p{
+        font-weight: 100;
+    }
     h3{ color: #fff;
         font-size: 2.7rem;
         font-weight: 100;
         margin: 10px 0;
         line-height: 1.2em;}
-    img{ width: 60%;}
+    img{ width: 80%;}
     .swipe-up-icon-big{ width: 100%;}
     .instruction-icon-big-left{
         margin: -50px 0 0 -10em;

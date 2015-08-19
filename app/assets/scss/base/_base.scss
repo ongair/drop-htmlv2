@@ -22,15 +22,15 @@ img {
 .drop-logo{
     text-align: center;
     width: 100%;
-    max-width: 125px;
+    max-width: 200px;
     height: auto;
 
     @media #{$break-iphone-6} {
-        max-width: 135px;
+        max-width: 200px;
     }
 
     @media #{$break-iphone-6-plus} {
-        max-width: 150px;
+        max-width: 200px;
     }
 }
 .view-categories,
@@ -60,6 +60,7 @@ ul{
 .carousel-indicators li {
     border:none;
     background-color: rgba(255,255,255,0.6);
+    margin: 0 3px;
 }
 .carousel-indicators .active {
     background-color: rgba(255,255,255,1);
