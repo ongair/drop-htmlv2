@@ -10,10 +10,11 @@ var bbcApp = angular.module('bbcApp', [
     'ngResource',
     'ngSanitize',
     'angularMoment',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angular-gestures'
 ]);
 
-bbcApp.config(function($stateProvider, $urlRouterProvider){
+bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProvider){
 
     $stateProvider
 
@@ -48,9 +49,15 @@ bbcApp.config(function($stateProvider, $urlRouterProvider){
     });
 
     $urlRouterProvider.otherwise('/tour');
+
+    hammerDefaultOptsProvider.set({
+        recognizers: [
+            [Hammer.Tap, {time: 250}],
+            [Hammer.Pan, {time: 250}],
+        ]
+    });
+
 });
-
-
 
 var appControllers = angular.module('appControllers', []);
 var appServices = angular.module('appServices', []);
