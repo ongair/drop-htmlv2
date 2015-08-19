@@ -35,13 +35,15 @@
     }
 
     .facebook{
-        background: #3d5b98;
-        color: #fff;
+        background: #fff;
+        color: #3d5b98;
+        text-transform: none;
     }
 
     .twitter{
-        background: #42b7e2;
-        color: #fff;
+        background: #fff;
+        color: #42b7e2;
+        text-transform: none;
     }
     .explore{
         color: #fff;
@@ -116,6 +118,19 @@ img.swipe-up-icon-big{
 }
 .tour-end{
     padding-top: 60px;
+    p{  clear: both;
+        display: block;
+        overflow: hidden;
+        margin: 10px auto;
+        width: 60%;
+        span{float: left; width: 30%}
+        .border{
+            border-top:1px solid;
+            float: left;
+            width: 30%;
+            margin-top: 10px;
+        }
+    }
 }
 .btn-customize{
     @extend %button-defaults;
