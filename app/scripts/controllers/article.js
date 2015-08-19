@@ -73,11 +73,19 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
                     $scope.openDrawer();
                 }
             } else {
-                if($scope.translateX > $scope.startX){
-                    $scope.likeArticle();
+
+                if(Math.abs($scope.translateX) > 100){
+                    if($scope.translateX > $scope.startX){
+                        console.log($scope.translateX);
+                        $scope.likeArticle();
+                    } else {
+                        console.log($scope.translateX);
+                        $scope.skipArticle();
+                    }
                 } else {
-                    $scope.skipArticle();
+                    $scope.resetArticle();
                 }
+
                 $scope.drawerOffset = 70;
             }
 
@@ -120,6 +128,14 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
             $scope.articleLeft = 0;
             $scope.articleRight = 100;
             $scope.maxWidth = 0;
+        }
+
+        $scope.resetArticle = function() {
+            $scope.translateX = 0;
+            $scope.articleLeft = 0;
+            $scope.articleRight = 0;
+            $scope.skipVisible = 'hidden';
+            $scope.likeVisible = 'hidden';
         }
     }
 ]);
