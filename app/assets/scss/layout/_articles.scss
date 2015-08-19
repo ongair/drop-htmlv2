@@ -104,3 +104,48 @@ ul.article-share{
         margin-right: 15px;
     }
 }
+//////////////////////////////////////////
+#overlays{
+    z-index: 1000;
+    position: absolute;
+    height: 100%;
+    h3{ color: #fff;
+        font-size: 2.7rem;
+        font-weight: 100;
+        margin: 10px 0;
+        line-height: 1.2em;}
+    img{ width: 60%;}
+    .instruction-icon-big-left{
+        margin: -50px 0 0 -10em;
+    }
+    .instruction-icon-big-right{
+        margin: -50px -10em 0 0;
+    }
+    .carousel-inner{ overflow:visible;}
+    .button{ color: #fff;}
+    #bg{background: rgba(0,0,0,0.8);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
