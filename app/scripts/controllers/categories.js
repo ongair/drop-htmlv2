@@ -52,6 +52,7 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
                 console.log(response);
             }, function(error){
                 // show error
+                $state.transitionTo('articles');
                 console.log(error);
             });
         }
