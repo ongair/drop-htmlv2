@@ -41,13 +41,13 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
         }
 
         $scope.dragging = function($event, direction) {
-            $event.preventDefault()
 
             if(!$scope.dragInProgress) {
                 return;
             }
 
             if(direction == 'verticle') {
+                $event.preventDefault();
                 $scope.translateY = $scope.startY + Math.floor($event.deltaY);
             } else {
                 $scope.translateX = $scope.startX + Math.floor($event.deltaX);
