@@ -11,5 +11,10 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams','$tim
             // log error
         });
 
+        $scope.destroyArticle = function($article) {
+            var index = $scope.articles.indexOf($article);
+            $scope.articles.splice(index,1);
+        }
+
     }
 ]);
