@@ -84,9 +84,8 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
                     }
                 } else {
                     $scope.resetArticle();
+                    $scope.drawerOffset = -70;
                 }
-
-                $scope.drawerOffset = 70;
             }
 
             $scope.startY = $scope.translateY;
