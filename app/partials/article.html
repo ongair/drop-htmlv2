@@ -1,4 +1,5 @@
 <div class="controller-container">
+
     <div class="article-nav">
         <div class="nav-bar main-nav">
             <a ui-sref="customize" class="btn-icon fixed-left">
@@ -10,73 +11,10 @@
         </div>
     </div>
 
-    <div class="navigation-widget like-panel" style="width:{{panelWidth}}px; min-width:{{articleLeft}}%; visibility:{{likeVisible}};">
-        <div class="widget-label">Like</div>
-    </div>
-
-    <div class="navigation-widget skip-panel" style="width:{{panelWidth}}px; min-width:{{articleRight}}%; visibility:{{skipVisible}};">
-        <div class="widget-label">Skip</div>
-    </div>
-
-    <div
-        id="articles"
-        class="articles article-widget"
-        hm-dragstart="dragStart($event, 'horizontal')"
-        hm-drag="dragging($event, 'horizontal')"
-        hm-dragend="dragEnd($event, 'horizontal')"
-        style="transform: translate({{translateX}}px,0); left:{{articleLeft}}%; right:{{articleRight}}%;"
-    >
-        <div id="post_{{article.id}}" class="item">
-            <!-- <img ng-src="{{article.image_url}}" /> -->
-            <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
-
-            <div class="article-content">
-                <div class="publishing">
-                    <span class="category-name">{{article.category.name}}</span>
-                    <span class="pub-date">{{article.created_at|amDateFormat:'Do MMM YYYY'}}</span>
-                </div>
-
-                <h3>{{article.title}}</h3>
-
-                <div class="tags">
-                    <span>Sports <i class="fa  fa-caret-left"></i></span>
-                    <span>Middle East <i class="fa  fa-caret-left"></i></span>
-                    <span>Africa <i class="fa  fa-caret-left"></i></span>
-                </div>
-
-                <div ng-bind-html="article.body|nl2p" class="body"></div>
-
-            </div>
-        </div>
-    </div>
-
-    <div
-        class="share-widget"
-        hm-dragstart="dragStart($event, 'verticle')"
-        hm-drag="dragging($event, 'verticle')"
-        hm-dragend="dragEnd($event, 'verticle')"
-        style="transform: translate(0,{{translateY}}px); margin-top:{{drawerOffset}}px; top:{{drawerTop}}%;"
-    >
-
-        <div class="share-summary" hm-tap="toggleDrawer">
-            <div class="share-inner">
-                <div class="share-counter">
-                    <i class="fa fa-share-alt"></i>
-                    51K
-                </div>
-
-                <div class="share-text">
-                    Swipe up to share this story with your friends
-                </div>
-            </div>
-            <div class="share-buttons">
-                <h4>Share to...</h4>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i> Facebook</a>
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i> Twitter</a>
-                <a href="#" class="whatsapp"><i class="fa fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </div>
+    <div class="articles-slider">
 
     </div>
+
+    <div ng-include="'partials/share-widget.html'"></div>
 
 </div>
