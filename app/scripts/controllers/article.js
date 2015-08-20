@@ -42,7 +42,7 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
 
         $scope.dragging = function($event, direction) {
 
-            if(!$scope.dragInProgress) {
+            if(!$scope.dragInProgress || $event.distance <20) {
                 return;
             }
 
@@ -74,7 +74,7 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
                 }
             } else {
 
-                if(Math.abs($scope.translateX) > 100){
+                if(Math.abs($scope.translateX) > 130){
                     if($scope.translateX > $scope.startX){
                         console.log($scope.translateX);
                         $scope.likeArticle();
@@ -130,6 +130,9 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
         }
 
         $scope.resetArticle = function() {
+        }
+
+        $scope.nextArticle = function() {
             $scope.translateX = 0;
             $scope.articleLeft = 0;
             $scope.articleRight = 0;
