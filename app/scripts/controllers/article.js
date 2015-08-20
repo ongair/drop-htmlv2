@@ -16,5 +16,24 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams','$tim
             $scope.articles.splice(index,1);
         }
 
+        // manage the article swipe actions
+        $scope.pointerSettings = {
+            'translateX': 0,
+            'startX': 0,
+            'dragging': false
+        };
+
+        $scope.dragStart = function($event){
+            $scope.pointerSettings.dragging = true;
+        }
+
+        $scope.dragging = function($event){
+            console.log($scope.pointerSettings.dragging);
+        }
+
+        $scope.dragEnd = function($event){
+            $scope.pointerSettings.dragging = false;
+        }
+
     }
 ]);
