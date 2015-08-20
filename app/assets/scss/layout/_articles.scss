@@ -148,7 +148,7 @@
             font-size: 26px;
         }
 
-        .fa{
+        .fa-share-alt{
             color: #00aeef;
         }
         .share-text{
@@ -196,4 +196,46 @@
     background: #fff;
     height: 100%;
     overflow-x: hidden;
+}
+.share-buttons{
+    padding:40px 20px 20px;
+    max-width: 270px;
+    margin: 0 auto;
+
+    h4{
+        color:#a8a9ad;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 25px;
+    }
+
+    a{
+        display: block;
+        font-size: 14px;
+        color: #fff;
+        margin: 10px 0;
+        padding: 12px 25px 12px 15px;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &.facebook{
+            background: #2d609b;
+        }
+        &.twitter{
+            background: #00c3f3;
+        }
+        &.whatsapp{
+            background: #189d0e;
+        }
+
+        &:hover{
+            color:#fff;
+        }
+
+        .fa{
+            color: #fff;
+            font-size: 18px;
+            min-width: 25px;
+        }
+    }
 }
