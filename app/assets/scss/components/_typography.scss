@@ -1,1 +1,55 @@
 /* Web Fonts -------------------- */
+sup {
+  font-size: 56%;
+}
+sub{
+  font-size: 50%;
+}
+h1,h2,h3,h4,h5,h6,p,a{
+  font-family: "Lato", Helvetica, Arial, sans-serif !important;
+}
+
+//need a proper font cascade
+// NO MORE IMPORTANTS ON SELECTORS :) please!! 
+
+h1{
+ 
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: 100;
+}
+
+h2{
+  font-weight: 400;
+  font-size: 3.0rem;
+}
+
+h3{  
+  font-weight: 100;
+  font-size: 3.0rem;
+  margin: 0;
+}
+
+h4{  
+  font-weight: 300;
+  font-size: 1.5rem;
+  // padding: 1.25rem 2rem;
+}
+
+h5{  
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+h6{  
+line-height: 1.5;
+font-size: 16px;
+font-weight: 400;
+}
+p{
+  font-size: 1.1rem;
+  font-weight: 100;
+  line-height: 1.5em;
+
+}

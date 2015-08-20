@@ -36,6 +36,18 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
         controller: 'CategoriesCtrl'
     })
 
+    .state('dropping', {
+        url: "/dropping",
+        templateUrl: "partials/dropping.html",
+        controller: 'DroppingCtrl'
+    })
+
+    .state('share', {
+        url: "/share",
+        templateUrl: "partials/share.html",
+        controller: 'ShareCtrl'
+    })        
+
     .state('articles', {
         url: "/articles",
         templateUrl: "partials/articles.html",
