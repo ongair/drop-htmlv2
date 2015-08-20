@@ -120,6 +120,7 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
             $scope.articleLeft = 100;
             $scope.articleRight = 0;
             $scope.maxWidth = 0;
+            $scope.nextArticle();
         }
 
         $scope.skipArticle = function() {
@@ -127,17 +128,19 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams',
             $scope.articleLeft = 0;
             $scope.articleRight = 100;
             $scope.maxWidth = 0;
+            $scope.nextArticle();
         }
 
         $scope.resetArticle = function() {
-        }
-
-        $scope.nextArticle = function() {
             $scope.translateX = 0;
             $scope.articleLeft = 0;
             $scope.articleRight = 0;
             $scope.skipVisible = 'hidden';
             $scope.likeVisible = 'hidden';
+        }
+
+        $scope.nextArticle = function() {
+
         }
     }
 ]);
