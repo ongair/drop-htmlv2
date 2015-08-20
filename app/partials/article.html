@@ -31,12 +31,12 @@
             <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
 
             <div class="article-content">
-                <h3>{{article.title}}</h3>
-
                 <div class="publishing">
-                    <span class="pub-date">{{article.created_at|amCalendar}}</span> |
                     <span class="category-name">{{article.category.name}}</span>
+                    <span class="pub-date">{{article.created_at|amDateFormat:'Do MMM YYYY'}}</span>
                 </div>
+
+                <h3>{{article.title}}</h3>
 
                 <div class="summary">
                     {{article.summary}}
