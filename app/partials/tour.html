@@ -1,16 +1,14 @@
 <div class="controller-container">
 
-<div class="owl-carousel" id="articles" class="articles landing">
+<div class="owl-carousel landing" id="articles">
     <carousel  interval="0" no-wrap="false">
         <slide class="item">
             <div class="connect-panel">
                 <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
                 <div class="register-panel">
-                    <h3>Welcome to the Drop</h3>
+                    <h2>Get the Drop on news you care about</h2>
                     <div class="page1-intro">
-                        <p>Tired of getting news you don't care about?</p>
-                        <p>Want to have the drop on the latest news, well you've come to the right place.</p>
-                        <p>Take our easy tour.</p>
+                       <img src="assets/img/swipe-left.png" alt="" class="swipe-icon" />
                     </div>
                 </div>
             </div>
@@ -18,27 +16,54 @@
 
         <slide class="item">
             <div class="connect-panel">
-                <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
+                <img src="assets/img/swipe-directions.png" alt="" class="swipe-icon-big" />
                 <div class="register-panel page-2-steps">
-                    <h3>How it Works</h3>
-                    <p>Swipe left for more Stories</p>
-                    <img src="assets/img/swipe-left.png" alt="" class="swipe-icon" />
+                    <h3>Swipe to get the next story</h3>
+                    <br>
+                    <p>Swipe right to like it</p>
+                    <p>Swipe left to dismiss a story</p>
                     <p>Swipe up on a Story to read it</p>
-                    <img src="assets/img/swipe-up.png" alt="" class="swipe-icon" />
+                    <br>
+                    <p>The more you swipe, the more DROP learns</p>
+
                 </div>
             </div>
         </slide>
 
         <slide class="item">
             <div class="connect-panel">
-                <img src="assets/img/logo.png" alt="BBC Drop" class="drop-logo" />
-                <div class="register-panel">
-                    <h3>You are ready for the Drop</h3>
-                    <p>So that we're able to make sure we're giving you the best drops, you need to create a account.</p>
+                <div class="register-panel page-4-steps">
+                    <h3>Share great stories with your friends</h3>
+                    <img src="assets/img/swipe-up.png" alt="" class="swipe-up-icon-big" />
 
+                    <div class="row">
+                        <div class="col-sm-4"><i class="fa  fa-share-alt"></i> 51K </div>
+                        <div class="col-sm-8">
+                        <p>Swipe up to share this story with your friends </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </slide>
+
+        <slide class="item">
+            <div class="connect-panel">
+                <img src="assets/img/heart.png" alt="" class="swipe-icon-small" />
+                <div class="register-panel page-5-steps">
+                    <h3>The more your share the more we drop stuff you’ll love.</h3>
                     <div class="tour-end">
-                        <a ui-sref="login" class="btn-customize">Customize Drop</a>
-                        <a ui-sref="articles" class="btn-explore">Go Explore</a>
+                        <a ng-click="authenticate('facebook')" class="button facebook"><i class="fa fa-facebook"></i>Connect with Facebook
+                        </a>
+                        <a ng-click="authenticate('twitter')" class="button twitter"><i class="fa fa-twitter"></i>Connect with Twitter</a>
+                        <p>
+                        <span class="border"></span>
+                        <span>
+                        or
+                        </span>
+                        <span class="border"></span>
+                        </p>
+                        <a ui-sref="articles" class="explore"><i class="explore"></i> Just Explore</a>
                     </div>
 
                 </div>

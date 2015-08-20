@@ -22,20 +22,22 @@ img {
 .drop-logo{
     text-align: center;
     width: 100%;
-    max-width: 125px;
+    max-width: 240px;
     height: auto;
 
     @media #{$break-iphone-6} {
-        max-width: 135px;
+        max-width: 240px;
     }
 
     @media #{$break-iphone-6-plus} {
-        max-width: 150px;
+        max-width: 240px;
     }
 }
 .view-categories,
 .view-login,
-.view-tour
+.view-tour,
+.view-dropping,
+.view-share
 {
     @include background-image("main-bg.jpg");
     color: #fff;
@@ -56,11 +58,12 @@ ul{
     position: fixed;
 }
 .carousel-indicators li {
-    background-color: #999;
-    background-color: rgba(70,70,70,.25);
+    border:none;
+    background-color: rgba(255,255,255,0.6);
+    margin: 0 3px;
 }
 .carousel-indicators .active {
-    background-color: #444;
+    background-color: rgba(255,255,255,1);
 }
 .carousel-control{
     visibility: hidden;

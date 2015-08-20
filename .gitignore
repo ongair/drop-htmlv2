@@ -4,3 +4,4 @@
 /app/assets/scss/*.css
 /app/data/
 /node_modules/
+.DS_Store
