@@ -22,15 +22,15 @@ img {
 .drop-logo{
     text-align: center;
     width: 100%;
-    max-width: 200px;
+    max-width: 240px;
     height: auto;
 
     @media #{$break-iphone-6} {
-        max-width: 200px;
+        max-width: 240px;
     }
 
     @media #{$break-iphone-6-plus} {
-        max-width: 200px;
+        max-width: 240px;
     }
 }
 .view-categories,
