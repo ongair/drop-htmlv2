@@ -12,38 +12,23 @@
     </div>
 
     <div id="articles" class="articles landing">
-        <carousel interval="myInterval" no-wrap="noWrapSlides">
-            <slide ng-repeat="article in articles" active="article.active">
+        <div ng-repeat="article in articles" class="item">
             <a ui-sref="article({articleId:article.id})">
                 <!-- <img ng-src="{{article.image_url}}" /> -->
                 <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
                 <div class="article-content">
+                    <div class="category-name">{{article.category.name}}</div>
                     <h3 class="landing">{{article.title}}</h3>
 
-                    <div class="publishing">
-                        <span class="pub-date">{{article.created_at|amCalendar}}</span> |
-                        <span class="category-name">{{article.category.name}}</span>
-                    </div>
+                    <div class="tags">
 
-                    <div class="summary landing">
-                        {{article.summary}}
+                        <span>Sports <i class="fa  fa-caret-left"></i></span>
+                        <span>Middle East <i class="fa  fa-caret-left"></i></span>
+                        <span>Africa <i class="fa  fa-caret-left"></i></span>
                     </div>
-
-                    <ul class="article-share">
-                        <li>
-                            <i class="fa fa-heart"></i> 250
-                        </li>
-                        <li>
-                            <i class="fa fa-comment"></i> 51
-                        </li>
-                        <li>
-                            <i class="fa fa-share-alt"></i> 36
-                        </li>
-                    </ul>
 
                 </div>
             </a>
-            </slide>
-        </carousel>
+        </div>
     </div>
 </div>
