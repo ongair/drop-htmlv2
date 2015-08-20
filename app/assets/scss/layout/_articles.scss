@@ -194,5 +194,6 @@
 .article-widget{
     @extend %fixed-position;
     background: #fff;
-    overflow: hidden;
+    height: 100%;
+    overflow-x: hidden;
 }
