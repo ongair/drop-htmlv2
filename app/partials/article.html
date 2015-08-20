@@ -1,11 +1,11 @@
 <div class="controller-container">
     <div class="article-nav">
         <div class="nav-bar main-nav">
-            <a ui-sref="articles" class="btn-icon fixed-left">
-                <i class="fa fa-arrow-left"></i>
+            <a ui-sref="customize" class="btn-icon fixed-left">
+                <i class="fa fa-bars"></i>
             </a>
             <a href="#" class="btn-icon fixed-right">
-                <i class="fa fa-share-alt"></i>
+                <i class="fa fa-search"></i>
             </a>
         </div>
     </div>
@@ -37,6 +37,12 @@
                 </div>
 
                 <h3>{{article.title}}</h3>
+
+                <div class="tags">
+                    <span>Sports <i class="fa  fa-caret-left"></i></span>
+                    <span>Middle East <i class="fa  fa-caret-left"></i></span>
+                    <span>Africa <i class="fa  fa-caret-left"></i></span>
+                </div>
 
                 <div ng-bind-html="article.body|nl2p" class="body"></div>
 

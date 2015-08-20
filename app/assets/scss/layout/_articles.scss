@@ -20,6 +20,7 @@
 
 
         .tags{
+            padding-bottom: 15px;
             span{
                 position: relative;
                 display: inline-block;
@@ -27,14 +28,14 @@
                 background: #a8a9ad;
                 color: #fff;
                 font-size: 12px;
-                padding: 5px 12px;
+                padding: 3px 18px 3px 5px;
 
                 .fa {
                     position: absolute;
                     color: #a8a9ad;
-                    top: -10px;
-                    left: -16px;
-                    font-size: 48px;
+                    top: -8px;
+                    left: -13px;
+                    font-size: 40px;
                 }
 
                 &:first-child{
@@ -67,7 +68,7 @@
             line-height: 1.2em;
             padding: 0;
             margin: 10px 0;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         p{
@@ -81,7 +82,7 @@
             line-height: 1.5;
 
             h3{
-                font-size: 26px;
+                font-size: 22px;
                 line-height: 1.2;
                 margin-bottom: 15px;
 
