@@ -18,11 +18,11 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
 
     $stateProvider
 
-    .state('login', {
-        url: "/login",
-        templateUrl: "partials/login.html",
-        controller: 'LoginCtrl'
-    })
+    // .state('login', {
+    //     url: "/login",
+    //     templateUrl: "partials/login.html",
+    //     controller: 'LoginCtrl'
+    // })
 
     .state('tour', {
         url: "/tour",
