@@ -1,16 +1,42 @@
 appControllers.controller('TourCtrl', [
+
     '$scope',
     '$http',
     'AuthService',
     '$state',
 
     function ($scope, $http, AuthService, $state) {
+
         $scope.controllerName = 'tour';
         AuthService.initialize();
 
-        $scope.connectUser = function(authorizationResult){
+        // post user details to the api backend for authorization
+        function authenticateBackend(user) {
+
+            $http.post('http://drop.ongair.im/api/auth/sign_in',user)
+
+            .then(function(response){
+                if(response.data.success == true){
+                    $scope.connectedUser = true;
+                    if(response.data.created == true){
+                        $state.transitionTo('customize');
+                    } else {
+                        $state.transitionTo('articles');
+                    }
+                } else {
+                    // authentication failure; show error
+                }
+
+            }, function(data) {
+                // connection failure; show error
+            });
+        }
+
+        // connect open id user with the api backend
+        $scope.connectUser = function(authorizationResult) {
             if(authorizationResult){
-                authorizationResult.me().done(function(me) {
+                authorizationResult.me().done(function(me)
+                {
                     var user = {
                         'name' : me.name,
                         'provider': authorizationResult.provider,
@@ -18,25 +44,7 @@ appControllers.controller('TourCtrl', [
                         'access_token': authorizationResult.oauth_token
                     }
 
-                    $http.post('http://drop.ongair.im/api/auth/sign_in',user)
-                    .then(function(response){
-                        if(response.data.success == true){
-                            $scope.connectedUser = true;
-                            if(response.data.created == true){
-                                $state.transitionTo('customize');
-                            } else {
-                                $state.transitionTo('articles');
-                            }
-                        } else {
-                            console.log('server connect failed');
-                            console.log(response.data);
-                        }
-
-                    }, function(data) {
-                        // log error
-                        console.log('An error has occured');
-                        console.log(data);
-                    });
+                    authenticateBackend(user);
 
                 }).fail(function(err) {
                     //todo: when the OAuth flow failed
@@ -44,6 +52,7 @@ appControllers.controller('TourCtrl', [
             }
         }
 
+        // authenticate the user using open id loign
         $scope.authenticate = function(provider) {
             AuthService.authenticate(provider).then(function() {
                 if (AuthService.isReady()) {
@@ -55,6 +64,7 @@ appControllers.controller('TourCtrl', [
             });
         };
 
+        // take user to articles page if user is authenticated
         if(AuthService.isReady()) {
             $scope.connectedUser = true;
             $scope.connectUser(AuthService.isReady());
