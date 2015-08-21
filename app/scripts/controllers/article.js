@@ -6,6 +6,17 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams','$tim
 
         $http.get('http://drop.ongair.im/api/articles.json')
         .then(function(response){
+            angular.forEach(response.data.data, function(article, key) {
+                article.pointer = {
+                    'x':0,
+                    'start':0,
+                    'p':0,
+                    'za':0,
+                    'zb':1,
+                    'right':0,
+                    'left':0,
+                };
+            });
             $scope.articles =  response.data.data;
         }, function(response) {
             // log error
@@ -17,23 +28,71 @@ appControllers.controller('ArticleCtrl', ['$scope', '$http','$stateParams','$tim
         }
 
         // manage the article swipe actions
-        $scope.pointerSettings = {
-            'translateX': 0,
-            'startX': 0,
-            'dragging': false
+        $scope.pointer = {
+            'dragging': false,
+            'position': 0
         };
 
-        $scope.dragStart = function($event){
-            $scope.pointerSettings.dragging = true;
+        $scope.dragStart = function($event, $article){
+            var i = $scope.articles.indexOf($article);
+            $scope.pointer.position = i;
+            $scope.pointer.dragging = true;
+            $scope.articles[i].pointer.start = $scope.articles[i].pointer.x;
+            console.log($scope.pointer.position);
         }
 
         $scope.dragging = function($event){
-            console.log($scope.pointerSettings.dragging);
+            var i = $scope.pointer.position;
+            if($scope.pointer.dragging){
+
+                $scope.articles[i].pointer.x = $scope.articles[i].pointer.start + $event.deltaX;
+                $scope.articles[i].pointer.p = Math.abs($scope.articles[i].pointer.x);
+
+                if($event.deltaX < 0) {
+                    $scope.articles[i].pointer.za = 0;
+                    $scope.articles[i].pointer.zb = 1;
+                } else {
+                    $scope.articles[i].pointer.za = 1;
+                    $scope.articles[i].pointer.zb = 0;
+                }
+            }
         }
 
         $scope.dragEnd = function($event){
-            $scope.pointerSettings.dragging = false;
+            var i = $scope.pointer.position;
+            var $article =  $scope.articles[i];
+
+            if(Math.abs($event.deltaX) > 130){
+                if($event.deltaX > $article.pointer.start){
+                    $scope.likeArticle($article);
+                } else {
+                    $scope.skipArticle($article);
+                }
+            }
+
+            $article.pointer.start = $article.pointer.x;
+            $scope.pointer.dragging = false;
+            $scope.pointer.position = 0;
         }
 
+        $scope.likeArticle = function($article) {
+            $article.pointer.x = 0;
+            $article.pointer.left = 100;
+            $article.pointer.right = 0;
+
+            $timeout(function(){
+                $scope.destroyArticle();
+            },80);
+        }
+
+        $scope.skipArticle = function($article) {
+            $article.pointer.x = 0;
+            $article.pointer.left = 0;
+            $article.pointer.right = 100;
+
+            $timeout(function(){
+                $scope.destroyArticle();
+            },80);
+        }
     }
 ]);
