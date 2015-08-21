@@ -1,97 +1,62 @@
 <div class="controller-container">
 
-    <div class="owl-carousel articles landing" id="overlays">
-        <div id="bg"></div>
-        <carousel  interval="0" no-wrap="false">
-
-        <slide class="item">
-            <div class="connect-panel">
-                <img src="assets/img/swipe-directions.png" alt="" class="swipe-icon-big" />
-                <div class="register-panel page-2-steps">
-                    <h3>Swipe to get the next story</h3>
-                    <br>
-                    <p>Swipe right to like it</p>
-                    <p>Swipe left to dismiss a story</p>
-                    <p>Swipe up on a Story to read it</p>
-                    <a ng-click="" class="button"><i class=""></i>Got it</a>
-                </div>
-            </div>
-        </slide>
-
-        <slide class="item">
-            <div class="connect-panel">
-                <div class="register-panel page-4-steps">
-                    <h3>Share great stories with your friends</h3>
-                    <img src="assets/img/swipe-up.png" alt="" class="swipe-up-icon-big" />
-
-                    <div class="row">
-                        <div class="col-sm-4"><i class="fa  fa-share-alt"></i> 51K </div>
-                        <div class="col-sm-8">
-                        <p>Swipe up to share this story with your friends </p>
-                        </div>
-                    </div>
-                    <a ng-click="" class="button"><i class=""></i>Got it</a>
-                </div>
-            </div>
-        </slide>
-
-        <slide class="item">
-            <div class="connect-panel">
-                <img src="assets/img/menu-pointer.png" alt="" class="instruction-icon-big-left" />
-                <div class="register-panel page-2-steps">
-                    <h3>Click here to edit your
-                        profile and personlise
-                        your Drop</h3>
-                    <br>
-                    <a ng-click="" class="button"><i class=""></i>Got it</a>
-                </div>
-            </div>
-        </slide>
-
-        <slide class="item">
-            <div class="connect-panel">
-                <img src="assets/img/search-pointer.png" alt="" class="instruction-icon-big-right" />
-                <div class="register-panel page-2-steps">
-                    <h3>Search for topics and
-                        let’s get the drop
-                        for you</h3>
-                    <br>
-                    <a ng-click="" class="button"><i class=""></i>Got it</a>
-                </div>
-            </div>
-        </slide>
-
-        </carousel>
-    </div>
-
     <div class="article-nav">
         <div class="nav-bar main-nav">
-            <a ui-sref="customize"  class="btn-icon fixed-left">
+            <a ui-sref="customize" class="btn-icon fixed-left">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="#" class="btn-icon fixed-right">
+            <a ui-sref="search({term:''})" class="btn-icon fixed-right">
                 <i class="fa fa-search"></i>
             </a>
         </div>
     </div>
 
-    <div id="articles" class="articles landing">
-        <div ng-repeat="article in articles" class="item">
-            <a ui-sref="article({articleId:article.id})">
-                <!-- <img ng-src="{{article.image_url}}" /> -->
-                <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
-                <div class="article-content">
-                    <div class="category-name">{{article.category.name}}</div>
-                    <h3 class="landing">{{article.title}}</h3>
+    <div class="articles-slider articles">
 
+        <div
+            ng-repeat="article in articles"
+
+            id="post_{{article.id}}"
+            class="article-panel"
+            hm-dragstart="dragStart($event,article)"
+            hm-drag="dragging($event)"
+            hm-dragend="dragEnd($event)"
+        >
+            <div class="navigation-widget like-panel"
+                style="width:{{article.pointer.p}}px; z-index:{{article.pointer.za}}; min-width:{{article.pointer.left}}%;">
+                <div class="widget-label">Like</div>
+            </div>
+
+            <div class="navigation-widget skip-panel"
+                style="width:{{article.pointer.p}}px; z-index:{{article.pointer.zb}}; min-width:{{article.pointer.right}}%;">
+                <div class="widget-label">Skip</div>
+            </div>
+
+            <div
+                class="item"
+                style="transform: translate({{article.pointer.x}}px,0); z-index:3;
+                {{article.pointer.left? 'left:' + article.pointer.left +'%;' : ''}}
+                {{article.pointer.right? 'right:' + article.pointer.right +'%;' : ''}}"
+            >
+                <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
+
+                <div class="article-content">
+                    <div class="publishing">
+                        <span class="category-name">{{article.category.name}}</span>
+                        <span class="pub-date">{{article.created_at|amDateFormat:'Do MMM YYYY'}}</span>
+                    </div>
+                    <h3>{{article.title}}</h3>
                     <div class="tags">
                         <span>Sports <i class="fa  fa-caret-left"></i></span>
                         <span>Middle East <i class="fa  fa-caret-left"></i></span>
                         <span>Africa <i class="fa  fa-caret-left"></i></span>
                     </div>
-
+                    <div ng-bind-html="article.body|nl2p" class="body"></div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
+
+    <div ng-include="'partials/share-widget.html'"></div>
+
 </div>
