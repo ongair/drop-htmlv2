@@ -47,18 +47,5 @@ appServices.factory('AuthService', function($q) {
             OAuth.clearCache();
             authorizationResult = false;
         },
-
-        // todo: return a nicely formated object
-        getProfile: function() {
-            authorizationResult.me().done(function(me) {
-                console.log(me.name);
-                console.log(me.alias);
-                console.log(me.location);
-                console.log(me.raw);
-                console.log(me.id);
-            }).fail(function(err) {
-                //todo: when the OAuth flow failed
-            });
-        }
     }
 });
