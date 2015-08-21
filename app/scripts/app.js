@@ -46,7 +46,7 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
         url: "/share",
         templateUrl: "partials/share.html",
         controller: 'ShareCtrl'
-    })        
+    })
 
     .state('articles', {
         url: "/articles",
@@ -55,9 +55,15 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
     })
 
     .state('article', {
-        url: "/article/:articleId",
+        url: "/article/:articleid",
         templateUrl: "partials/article.html",
         controller: 'ArticleCtrl'
+    })
+
+    .state('search', {
+        url: "/search/:term",
+        templateUrl: "partials/search.html",
+        controller: 'SearchCtrl'
     });
 
     $urlRouterProvider.otherwise('/tour');
