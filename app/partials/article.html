@@ -11,52 +11,24 @@
         </div>
     </div>
 
-    <div class="articles-slider articles">
+    <div class="search-result articles">
+        <div class="item">
+            <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
 
-        <div
-            ng-repeat="article in articles"
-
-            id="post_{{article.id}}"
-            class="article-panel"
-            hm-dragstart="dragStart($event,article)"
-            hm-drag="dragging($event)"
-            hm-dragend="dragEnd($event)"
-        >
-            <div class="navigation-widget like-panel"
-                style="width:{{article.pointer.p}}px; z-index:{{article.pointer.za}}; min-width:{{article.pointer.left}}%;">
-                <div class="widget-label">Like</div>
-            </div>
-
-            <div class="navigation-widget skip-panel"
-                style="width:{{article.pointer.p}}px; z-index:{{article.pointer.zb}}; min-width:{{article.pointer.right}}%;">
-                <div class="widget-label">Skip</div>
-            </div>
-
-            <div
-                class="item"
-                style="transform: translate({{article.pointer.x}}px,0); z-index:3;
-                {{article.pointer.left? 'left:' + article.pointer.left +'%;' : ''}}
-                {{article.pointer.right? 'right:' + article.pointer.right +'%;' : ''}}"
-            >
-                <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
-
-                <div class="article-content">
-                    <div class="publishing">
-                        <span class="category-name">{{article.category.name}}</span>
-                        <span class="pub-date">{{article.created_at|amDateFormat:'Do MMM YYYY'}}</span>
-                    </div>
-                    <h3>{{article.title}}</h3>
-                    <div class="tags">
-                        <span>Sports <i class="fa  fa-caret-left"></i></span>
-                        <span>Middle East <i class="fa  fa-caret-left"></i></span>
-                        <span>Africa <i class="fa  fa-caret-left"></i></span>
-                    </div>
-                    <div ng-bind-html="article.body|nl2p" class="body"></div>
+            <div class="article-content">
+                <div class="publishing">
+                    <span class="category-name">{{article.category.name}}</span>
+                    <span class="pub-date">{{article.created_at|amDateFormat:'Do MMM YYYY'}}</span>
                 </div>
+                <h3>{{article.title}}</h3>
+                <div class="tags">
+                    <span>Sports <i class="fa  fa-caret-left"></i></span>
+                    <span>Middle East <i class="fa  fa-caret-left"></i></span>
+                    <span>Africa <i class="fa  fa-caret-left"></i></span>
+                </div>
+                <div ng-bind-html="article.body|nl2p" class="body"></div>
             </div>
         </div>
     </div>
-
-    <div ng-include="'partials/share-widget.html'"></div>
 
 </div>
