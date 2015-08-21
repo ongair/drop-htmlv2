@@ -148,7 +148,7 @@
             height: 70px;
             width: 75px;
             line-height: 70px;
-            font-size: 26px;
+            font-size: 1.9em;
         }
 
         .fa-share-alt{
@@ -207,8 +207,8 @@
     overflow-x: hidden;
 }
 .share-buttons{
-    padding:40px 20px 20px;
-    max-width: 270px;
+    padding:40px 10px 10px;
+    max-width: 360px;
     margin: 0 auto;
 
     h4{
@@ -222,10 +222,11 @@
         display: block;
         font-size: 14px;
         color: #fff;
-        margin: 10px 0;
+        margin: 10px 5px;
         padding: 12px 25px 12px 15px;
-        border-radius: 2px;
+        border-radius: 3px;
         cursor: pointer;
+        text-align: center;
 
         &.facebook{
             background: #2d609b;
@@ -258,11 +259,11 @@
         margin-top: 0;
     }
     p{
-        font-weight: 100;
+        font-weight: 300;
     }
     h3{ color: #fff;
         font-size: 2.7rem;
-        font-weight: 100;
+        font-weight: 300;
         margin: 10px 0;
         line-height: 1.2em;}
     img{ width: 80%;}
