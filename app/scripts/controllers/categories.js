@@ -1,5 +1,10 @@
-appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$state',
-    function ($scope, $http, $state) {
+appControllers.controller('CategoriesCtrl', [
+    '$scope',
+    '$http',
+    'AuthService',
+    '$state',
+
+    function ($scope, $http, AuthService, $state) {
 
         $scope.controllerName = 'categories';
 
@@ -7,9 +12,7 @@ appControllers.controller('CategoriesCtrl', ['$scope', '$http','AuthService','$s
         .then(function(response){
             $scope.categories =  response.data.data;
         }, function(data) {
-            // log error
-            console.log('An error has occured');
-            console.log(data);
+            // show error
         });
 
         //sign out clears the OAuth cache, the user will have to reauthenticate when returning
