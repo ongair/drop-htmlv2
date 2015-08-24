@@ -16,7 +16,7 @@
         </div>
 
         <div ng-repeat="article in articles" class="item">
-            <a ui-sref="article({articleid:article.id})">
+            <a ui-sref="article({articleid:article.id,term:term})">
                 <img ng-src="{{article.image_url}}" />
                 <div class="article-content">
                     <div class="category-name">{{article.category.name}}</div>
