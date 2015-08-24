@@ -55,7 +55,7 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
     })
 
     .state('article', {
-        url: "/article/:articleid",
+        url: "/article/:articleid/:term",
         templateUrl: "partials/article.html",
         controller: 'ArticleCtrl'
     })
