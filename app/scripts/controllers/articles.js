@@ -79,6 +79,8 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
         }
 
         $scope.likeArticle = function($article) {
+            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/like');
+
             $article.pointer.x = 0;
             $article.pointer.left = 100;
             $article.pointer.right = 0;
@@ -89,6 +91,8 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
         }
 
         $scope.skipArticle = function($article) {
+            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/ignore');
+
             $article.pointer.x = 0;
             $article.pointer.left = 0;
             $article.pointer.right = 100;
