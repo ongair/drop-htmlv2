@@ -2,20 +2,22 @@
 
     <div class="article-nav">
         <div class="nav-bar main-nav">
+            <input ng-model="term" ng-enter="searchArticles()" ng-backspace="clearSearch()" type="search" class="q-search" placeholder="Search" />
             <a ui-sref="articles"  class="btn-icon fixed-left">
                 <i class="fa fa-arrow-left"></i>
-            </a>
-            <a ui-sref="search({term:''})" class="btn-icon fixed-right">
-                <i class="fa fa-search"></i>
             </a>
         </div>
     </div>
 
     <div id="articles" class="articles landing">
+
+        <div class="no-results count-{{articles.length}}">
+            No search results
+        </div>
+
         <div ng-repeat="article in articles" class="item">
             <a ui-sref="article({articleid:article.id})">
-                <!-- <img ng-src="{{article.image_url}}" /> -->
-                <img ng-src="http://lorempixel.com/420/230/sports/?{{article.id}}" />
+                <img ng-src="{{article.image_url}}" />
                 <div class="article-content">
                     <div class="category-name">{{article.category.name}}</div>
                     <h3 class="landing">{{article.title}}</h3>
@@ -29,6 +31,7 @@
                 </div>
             </a>
         </div>
+
     </div>
 
 </div>
