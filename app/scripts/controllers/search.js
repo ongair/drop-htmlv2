@@ -13,7 +13,6 @@ appControllers.controller('SearchCtrl', ['$scope', '$http','$stateParams',
 
             $http.post('http://drop.ongair.im/api/articles/search.json',{'term':$scope.term})
             .then(function(response){
-                console.log(response);
                 $scope.articles =  response.data.data;
 
             }, function(response) {
