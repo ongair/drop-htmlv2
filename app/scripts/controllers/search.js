@@ -1,15 +1,30 @@
-appControllers.controller('SearchCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+appControllers.controller('SearchCtrl', ['$scope', '$http','$stateParams',
+    function ($scope, $http, $stateParams) {
 
         $scope.controllerName = 'articles';
-        $scope.myInterval = 0;
-        $scope.noWrapSlides = false;
+        $scope.term = $stateParams.term;
+        $scope.articles = [];
 
-        $http.get('http://drop.ongair.im/api/articles.json')
-        .then(function(response){
-            var slides = $scope.articles =  response.data.data;
-        }, function(data) {
-            // log error
-        });
+        $scope.searchArticles = function() {
+
+            if($scope.term.length < 3){
+                return;
+            }
+
+            $http.post('http://drop.ongair.im/api/articles/search.json',{'term':$scope.term})
+            .then(function(response){
+                console.log(response);
+                $scope.articles =  response.data.data;
+
+            }, function(response) {
+                // show error
+            });
+        }
+
+        $scope.clearSearch = function() {
+            $scope.articles = [];
+        }
+
+        $scope.searchArticles();
     }
 ]);
