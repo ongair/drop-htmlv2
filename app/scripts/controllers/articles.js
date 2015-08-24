@@ -38,7 +38,6 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
             $scope.pointer.position = i;
             $scope.pointer.dragging = true;
             $scope.articles[i].pointer.start = $scope.articles[i].pointer.x;
-            console.log($scope.pointer.position);
         }
 
         $scope.dragging = function($event){
@@ -97,6 +96,62 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
             $timeout(function(){
                 $scope.destroyArticle();
             },80);
+        }
+
+        // Share Drawer Touch Events
+        // drawer settings
+        $scope.drawer = {
+            'offset': -70,
+            'top': 100,
+            'translateY': 0,
+            'open': false,
+            'dragging': false,
+            'startY': 0
+        };
+
+        $scope.drawerStartDragging = function($event) {
+            $scope.drawer.startY = $scope.drawer.translateY;
+            $scope.drawer.dragging = true;
+        }
+
+        $scope.drawerDragging = function($event) {
+            if($scope.drawer.dragging) {
+                $event.preventDefault();
+                $scope.drawer.translateY = $scope.drawer.startY + Math.floor($event.deltaY);
+            }
+        }
+
+        $scope.drawerEndDragging = function($event) {
+            if($scope.drawer.translateY > $scope.drawer.startY) {
+                $scope.closeDrawer();
+            } else {
+                $scope.openDrawer();
+            }
+
+            $scope.drawer.startY = $scope.drawer.translateY;
+            $scope.drawer.dragging = false;
+        }
+
+        $scope.closeDrawer = function() {
+            $scope.drawer.top = 100;
+            $scope.drawer.offset = -70;
+            $scope.drawer.open = false;
+            $scope.drawer.translateY = 0;
+        }
+
+        $scope.openDrawer = function() {
+            $scope.drawer.top = 0;
+            $scope.drawer.offset = 0;
+            $scope.drawer.open = true;
+            $scope.drawer.translateY = 0;
+        }
+
+        $scope.toggleDrawer = function() {
+            if($scope.drawer.open){
+                $scope.closeDrawer();
+            } else {
+                $scope.openDrawer();
+            }
         }
     }
 ]);

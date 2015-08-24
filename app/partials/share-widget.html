@@ -1,9 +1,9 @@
 <div
     class="share-widget"
-    hm-dragstart="dragStart($event, 'verticle')"
-    hm-drag="dragging($event, 'verticle')"
-    hm-dragend="dragEnd($event, 'verticle')"
-    style="transform: translate(0,{{translateY}}px); margin-top:{{drawerOffset}}px; top:{{drawerTop}}%;"
+    hm-dragstart="drawerStartDragging($event)"
+    hm-drag="drawerDragging($event)"
+    hm-dragend="drawerEndDragging($event)"
+    style="transform: translate(0,{{drawer.translateY}}px); margin-top:{{drawer.offset}}px; top:{{drawer.top}}%;"
 >
 
     <div class="share-summary" hm-tap="toggleDrawer">
