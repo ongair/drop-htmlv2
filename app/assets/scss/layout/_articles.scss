@@ -289,3 +289,37 @@
     }
 
 }
+
+// search
+.q-search{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+    background: #98283e;
+    color: #fff;
+    padding: 5px 15px 5px 55px;
+    font-size: 16px;
+    outline: none;
+}
+.no-results{
+    position: fixed;
+    top: 50%;
+    height: 40px;
+    line-height: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    font-size: 16px;
+    color:#ccc;
+    visibility: hidden;
+
+    &.count-0{
+        visibility: visible;
+    }
+}
