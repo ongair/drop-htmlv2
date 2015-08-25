@@ -73,6 +73,11 @@ ul#categories{
             margin: 10px auto;
             overflow: hidden;
             opacity: 0.5;
+
+            svg{
+                width: 100%;
+                height: auto;
+            }
         }
 
         &.selected-true .touch-icon{
@@ -95,4 +100,3 @@ ul#categories{
     font-size: 1.5em;
     .fa{ right: 0;}
 }
-
