@@ -1,4 +1,6 @@
-appDirectives.directive('ngEnter', function () {
+appDirectives
+
+.directive('ngEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
             if(event.which === 13) {
@@ -10,9 +12,9 @@ appDirectives.directive('ngEnter', function () {
             }
         });
     };
-});
+})
 
-appDirectives.directive('ngBackspace', function () {
+.directive('ngBackspace', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
             if(event.which === 8) {
