@@ -41,11 +41,17 @@ appControllers.controller('CategoriesCtrl', [
             $http.get('http://drop.ongair.im/api/categories.json')
             .then(function(response){
                 $scope.categories =  response.data.data;
+                $scope.done();
             }, function(data) { /* show error */ });
         }
 
         $scope.done = function() {
             $scope.finished_loading = true;
+        }
+
+        // combine categories with user selected ones
+        $scope.mergePreferences = function() {
+
         }
 
         $scope.toggleActivation = function(category) {
