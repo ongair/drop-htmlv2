@@ -8,25 +8,53 @@ appControllers.controller('CategoriesCtrl', [
 
         $scope.controllerName = 'categories';
 
-        $http.get('http://drop.ongair.im/api/categories.json')
-        .then(function(response){
-            $scope.categories =  response.data.data;
-        }, function(data) {
-            // show error
-        });
+        $scope.finished_loading = false;
+        $scope.categories = [];
+        $scope.logged_in = false;
+        $scope.user_categories = [];
 
-        //sign out clears the OAuth cache, the user will have to reauthenticate when returning
-        $scope.signOut = function() {
-            AuthService.clearCache();
-            $scope.connectedUser = false
-            console.log('loged out');
-            $state.transitionTo('login');
-            // todo:
-            // end the backend session
-            // somewhere redirect the user to login
+        $scope.checkLogin = function(){
+            $http.get('http://drop.ongair.im/api/auth/status.json')
+            .then(function(response){
+                $scope.logged_in = response.data.logged_in;
+
+                $scope.getPreferences();
+            }, function(data) {
+                /* show error */
+            });
+        }
+
+        $scope.getPreferences = function(){
+            if(!$scope.logged_in){
+                $state.transitionTo('tour');
+            }
+            else
+            {
+                $http.get('http://drop.ongair.im/api/auth/preferences.json')
+                .then(function(response){
+                    $scope.getCategories();
+                }, function(data) {
+                    /* show error */
+                });
+            }
+        }
+
+        $scope.getCategories = function() {
+            $http.get('http://drop.ongair.im/api/categories.json')
+            .then(function(response){
+                $scope.categories =  response.data.data;
+            }, function(data) { /* show error */ });
+        }
+
+        $scope.done = function() {
+            $scope.finished_loading = true;
         }
 
         $scope.toggleActivation = function(category) {
+            if($scope.finished_loading === false) {
+                return;
+            }
+
             if(category.selected == true){
                 category.selected = false;
             }
@@ -35,7 +63,11 @@ appControllers.controller('CategoriesCtrl', [
             }
         }
 
-        $scope.updatePreferences = function(categories){
+        $scope.savePreferences = function(categories){
+            if($scope.finished_loading === false) {
+                return;
+            }
+
             var myCategories = {
                 'categories': []
             };
@@ -55,9 +87,10 @@ appControllers.controller('CategoriesCtrl', [
             }, function(error){
                 // show error
                 $state.transitionTo('articles');
-                console.log(error);
             });
         }
+
+        $scope.checkLogin();
 
     }
 ]);
