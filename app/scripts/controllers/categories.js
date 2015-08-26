@@ -14,8 +14,8 @@ appControllers.controller('CategoriesCtrl', [
 
         $scope.checkLogin = function(){
             $http.get('http://drop.ongair.im/api/auth/status.json')
-            .then(function(response){
-                $scope.logged_in = response.data.logged_in;
+            .then(function(res){
+                $scope.logged_in = res.data.logged_in;
                 $scope.getPreferences();
             }, function(data) {
                 /* show error */
@@ -86,13 +86,59 @@ appControllers.controller('CategoriesCtrl', [
             $http.post('http://drop.ongair.im/api/auth/personalize.json',myCategories)
             .then(function(response){
                 // save was successful
-                console.log(response);
                 $state.transitionTo('articles');
             }, function(error){
                 // show error
                 $state.transitionTo('articles');
             });
         }
+
+        // post user details to the api backend for authorization
+        function authenticateBackend(user) {
+
+            $http.post('http://drop.ongair.im/api/auth/sign_in',user)
+
+            .then(function(response){
+                $scope.checkLogin();
+
+            }, function(data) {
+                // connection failure; show error
+            });
+        }
+
+        // connect open id user with the api backend
+        $scope.connectUser = function(authorizationResult) {
+            if(authorizationResult){
+                authorizationResult.me().done(function(me)
+                {
+                    var user = {
+                        'name' : me.name,
+                        'provider': authorizationResult.provider,
+                        'uid':me.id,
+                        'access_token': authorizationResult.oauth_token
+                    }
+
+                    authenticateBackend(user);
+
+                }).fail(function(err) {
+                    //todo: when the OAuth flow failed
+                });
+            }
+        }
+
+        // authenticate the user using open id loign
+        $scope.authenticate = function(provider) {
+            AuthService.authenticate(provider).then(function() {
+                if (AuthService.isReady()) {
+                    $scope.connectUser(AuthService.isReady());
+                } else {
+                    // show an error message
+                    console.log('login failed');
+                }
+            });
+        };
+
+        AuthService.initialize();
 
         $scope.checkLogin();
 
