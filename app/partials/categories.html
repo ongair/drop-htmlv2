@@ -19,7 +19,7 @@
                 </li>
             </ul>
 
-            <a  ng-if="finished_loading" class="button go customize" ng-click="updatePreferences(categories)">Let's Go <i class="fa fa-arrow-right"></i></a>
+            <a  ng-if="finished_loading" class="button go customize" ng-click="savePreferences(categories)">Let's Go <i class="fa fa-arrow-right"></i></a>
         </div>
 
         <div ng-if="logged_in == false && finished_loading" class="authorise-user" ng-include="'partials/login.html'"></div>

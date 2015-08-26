@@ -30,6 +30,8 @@ appControllers.controller('CategoriesCtrl', [
             {
                 $http.get('http://drop.ongair.im/api/auth/preferences.json')
                 .then(function(response){
+                    console.log(response);
+                    $scope.user_categories = response.data.categories;
                     $scope.getCategories();
                 }, function(data) {
                     /* show error */
