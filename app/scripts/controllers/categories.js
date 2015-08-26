@@ -7,7 +7,6 @@ appControllers.controller('CategoriesCtrl', [
     function ($scope, $http, AuthService, $state) {
 
         $scope.controllerName = 'categories';
-
         $scope.finished_loading = false;
         $scope.categories = [];
         $scope.logged_in = false;
@@ -17,7 +16,6 @@ appControllers.controller('CategoriesCtrl', [
             $http.get('http://drop.ongair.im/api/auth/status.json')
             .then(function(response){
                 $scope.logged_in = response.data.logged_in;
-
                 $scope.getPreferences();
             }, function(data) {
                 /* show error */
