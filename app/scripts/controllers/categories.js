@@ -111,11 +111,19 @@ appControllers.controller('CategoriesCtrl', [
             if(authorizationResult){
                 authorizationResult.me().done(function(me)
                 {
+                    var access_token = '';
+
+                    if(authorizationResult.provider === 'twitter') {
+                        access_token = authorizationResult.oauth_token;
+                    } else {
+                        access_token = authorizationResult.access_token;
+                    }
+
                     var user = {
                         'name' : me.name,
                         'provider': authorizationResult.provider,
                         'uid':me.id,
-                        'access_token': authorizationResult.oauth_token
+                        'access_token': access_token
                     }
 
                     authenticateBackend(user);
