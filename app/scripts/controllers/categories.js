@@ -24,7 +24,7 @@ appControllers.controller('CategoriesCtrl', [
 
         $scope.getPreferences = function(){
             if(!$scope.logged_in){
-                $state.transitionTo('tour');
+                $scope.finished_loading = true;
             }
             else
             {
