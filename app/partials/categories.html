@@ -6,19 +6,23 @@
             </a>
         </div>
 
-        <div class="widget-info">
-            <h3>Pick at least three categories to personalize your Drop feed</h3>
+        <div ng-if="logged_in" class="preferences">
+            <div class="widget-info">
+                <h3>Pick at least three categories to personalize your Drop feed</h3>
 
+            </div>
+
+            <ul id="categories">
+                <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-click="toggleActivation(category)" class="selected-{{category.selected}}">
+                    <div ng-bind-html="category.logo" class="touch-icon"></div>
+                    <span>{{category.name}}</span>
+                </li>
+            </ul>
+
+            <a  ng-if="finished_loading" class="button go customize" ng-click="updatePreferences(categories)">Let's Go <i class="fa fa-arrow-right"></i></a>
         </div>
 
-        <ul id="categories">
-            <li ng-repeat="category in categories" id="cat_id_{{category.id}}" ng-click="toggleActivation(category)" class="selected-{{category.selected}}">
-                <div ng-bind-html="category.logo" class="touch-icon"></div>
-                <span>{{category.name}}</span>
-            </li>
-        </ul>
-
-        <a  ng-if="finished_loading" class="button go customize" ng-click="updatePreferences(categories)">Let's Go <i class="fa fa-arrow-right"></i></a>
+        <div ng-if="logged_in == false && finished_loading" class="authorise-user" ng-include="'partials/login.html'"></div>
 
     </div>
 </div>
