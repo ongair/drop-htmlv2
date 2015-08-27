@@ -3,57 +3,90 @@ appControllers.controller('CategoriesCtrl', [
     '$http',
     'AuthService',
     '$state',
-
-    function ($scope, $http, AuthService, $state) {
+    '$q',
+    function ($scope, $http, AuthService, $state, $q) {
 
         $scope.controllerName = 'categories';
         $scope.finished_loading = false;
         $scope.categories = [];
         $scope.logged_in = false;
-        $scope.user_categories = [];
+        $scope.message = '';
 
-        $scope.checkLogin = function(){
+
+        function checkLogin(){
+            var deferred = $q.defer();
+
             $http.get('http://drop.ongair.im/api/auth/status.json')
-            .then(function(res){
-                $scope.logged_in = res.data.logged_in;
-                $scope.getPreferences();
-            }, function(data) {
-                /* show error */
+            .then(function(response){
+                deferred.resolve(response.data.logged_in);
+            }, function(error) {
+                deferred.reject(error);
             });
+
+            return deferred.promise;
         }
 
-        $scope.getPreferences = function(){
-            if(!$scope.logged_in){
-                $scope.finished_loading = true;
-            }
-            else
-            {
-                $http.get('http://drop.ongair.im/api/auth/preferences.json')
-                .then(function(response){
-                    console.log(response);
-                    $scope.user_categories = response.data.categories;
-                    $scope.getCategories();
-                }, function(data) {
-                    /* show error */
-                });
-            }
+        function getPreferences(){
+            var deferred = $q.defer();
+
+            $http.get('http://drop.ongair.im/api/auth/preferences.json')
+            .then(function(response){
+                deferred.resolve(response.data.categories);
+            }, function(error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
         }
 
-        $scope.getCategories = function() {
+        function getCategories(){
+            var deferred = $q.defer();
+
             $http.get('http://drop.ongair.im/api/categories.json')
             .then(function(response){
-                $scope.categories =  response.data.data;
-                $scope.done();
-            }, function(data) { /* show error */ });
+                deferred.resolve(response.data.data);
+            }, function(error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
         }
 
-        $scope.done = function() {
-            $scope.finished_loading = true;
+        function checkIfSelected(id, userCategories){
+
+            var selected = false;
+            var k;
+            for(k=0; k<userCategories.length; k++){
+                if(!selected) {
+                    if(userCategories[k].id == id){
+                        selected = true;
+                    }
+                }
+            }
+            return selected;
         }
 
-        // combine categories with user selected ones
-        $scope.mergePreferences = function() {
+        function mergeCategories(categories, userCategories){
+            var i;
+            for(i=0; i<categories.length; i++){
+                categories[i].selected = checkIfSelected(categories[i].id, userCategories);
+            }
+            return categories;
+        }
 
+        $scope.managePreferences = function(){
+            $q.all([
+                checkLogin(),
+                getCategories(),
+                getPreferences()
+            ]).then(function(data){
+                $scope.logged_in = data[0];
+                $scope.categories = mergeCategories(data[1],data[2]);
+                $scope.finished_loading = true;
+            },function(response){
+                $scope.message = response.data.error;
+                $scope.finished_loading = true;
+            });
         }
 
         $scope.toggleActivation = function(category) {
@@ -150,7 +183,7 @@ appControllers.controller('CategoriesCtrl', [
 
         AuthService.initialize();
 
-        $scope.checkLogin();
+        $scope.managePreferences();
 
     }
 ]);
