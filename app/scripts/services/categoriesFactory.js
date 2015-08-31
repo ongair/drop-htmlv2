@@ -1,7 +1,6 @@
 bbcApp.factory('Categories',['$http', function($http){
     var categories = [];
     var preferences = [];
-    var authenticated = false;
     var loading = {status:true}
 
     var checkUserCategory = function(category){
@@ -73,6 +72,8 @@ bbcApp.factory('Categories',['$http', function($http){
                     myCategories.categories.push(categories[i].id);
                 }
             }
+
+            console.log(myCategories);
 
             $http.post(url,myCategories).then(function(response){
                 // save successful
