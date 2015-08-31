@@ -3,7 +3,7 @@ bbcApp.factory('AuthProvider',[
     function($http, $q, AuthService){
         AuthService.initialize();
         var authorizationResult = AuthService.isReady();
-        var fullyAuthenticated = false;
+        var fullyAuthenticated = {status:false}
 
         var authenticateBackend = function(authorizationResult){
             var deferred = $q.defer();
@@ -41,7 +41,7 @@ bbcApp.factory('AuthProvider',[
         return {
             isReady: function(){
                 // if locally authenticated then connect to the backend
-                if(!fullyAuthenticated && authorizationResult){
+                if(fullyAuthenticated.status == false && authorizationResult){
                     authenticateBackend(authorizationResult);
                 }
                 return authorizationResult;
@@ -53,7 +53,7 @@ bbcApp.factory('AuthProvider',[
                     if (AuthService.isReady()) {
                         authenticateBackend(AuthService.isReady()).then(function(response){
                             if(response.data.success == true){
-                                fullyAuthenticated = true;
+                                fullyAuthenticated.status = true;
                             }
                             deferred.resolve(response);
                         },function(error){
@@ -69,10 +69,10 @@ bbcApp.factory('AuthProvider',[
 
             isFullyAuthenticated: function(){
                 var url = 'http://drop.ongair.im/api/auth/status.json';
-                if(!fullyAuthenticated){
+                if(!fullyAuthenticated.status){
                     $http.get(url).then(function(response){
                         if(response.data.logged_in == true){
-                            fullyAuthenticated = true;
+                            fullyAuthenticated.status = true;
                         }
                     }, function(error){
                         // handle the error

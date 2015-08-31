@@ -6,7 +6,7 @@
             </a>
         </div>
 
-        <div ng-show="loggedIn" class="preferences">
+        <div ng-show="loggedIn.status" class="preferences">
             <div class="widget-info">
                 <h3>Pick at least three categories to personalize your Drop feed</h3>
 
@@ -22,7 +22,7 @@
             <a  ng-hide="loading.status" class="button go customize" ng-click="savePreferences()">Let's Go <i class="fa fa-arrow-right"></i></a>
         </div>
 
-        <div ng-hide="loggedIn" class="authorise-user" ng-include="'partials/login.html'"></div>
+        <div ng-hide="loggedIn.status" class="authorise-user" ng-include="'partials/login.html'"></div>
 
     </div>
 </div>
