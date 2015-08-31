@@ -1,30 +1,11 @@
-appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$timeout',
-    function ($scope, $http, $stateParams, $timeout) {
-        // expect $stateParams.articleId
+appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$timeout','Articles',
+    function ($scope, $http, $stateParams, $timeout, Articles) {
 
         $scope.controllerName = 'article';
-
-        $http.get('http://drop.ongair.im/api/articles.json')
-        .then(function(response){
-            angular.forEach(response.data.data, function(article, key) {
-                article.pointer = {
-                    'x':0,
-                    'start':0,
-                    'p':0,
-                    'za':0,
-                    'zb':1,
-                    'right':0,
-                    'left':0,
-                };
-            });
-            $scope.articles =  response.data.data;
-        }, function(response) {
-            // log error
-        });
+        $scope.articles = Articles.get();
 
         $scope.destroyArticle = function($article) {
-            var index = $scope.articles.indexOf($article);
-            $scope.articles.splice(index,1);
+            Articles.destroy($article);
         }
 
         // manage the article swipe actions
@@ -79,7 +60,7 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
         }
 
         $scope.likeArticle = function($article) {
-            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/like');
+            Articles.like($article);
 
             $article.pointer.x = 0;
             $article.pointer.left = 100;
@@ -91,7 +72,7 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
         }
 
         $scope.skipArticle = function($article) {
-            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/ignore');
+            Articles.skip($article);
 
             $article.pointer.x = 0;
             $article.pointer.left = 0;
