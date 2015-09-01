@@ -8,6 +8,11 @@ appControllers.controller('ArticlesCtrl', ['$scope', '$http','$stateParams','$ti
             Articles.destroy($article);
         }
 
+        $scope.share = function(provider){
+            var url = Articles.getCurrentUrl(provider);
+            window.open(url, '_blank');
+        }
+
         // manage the article swipe actions
         $scope.pointer = {
             'dragging': false,
