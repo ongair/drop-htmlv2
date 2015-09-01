@@ -6,8 +6,8 @@
     style="transform: translate(0,{{drawer.translateY}}px); margin-top:{{drawer.offset}}px; top:{{drawer.top}}%;"
 >
 
-    <div class="share-summary" hm-tap="toggleDrawer">
-        <div class="share-inner">
+    <div class="share-summary">
+        <div class="share-inner" hm-tap="toggleDrawer">
             <div class="share-counter">
                 <i class="fa fa-share-alt"></i>
                 51K
@@ -19,9 +19,9 @@
         </div>
         <div class="share-buttons">
             <h4>Share to...</h4>
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i> Share on Facebook</a>
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i> Tweet on Twitter</a>
-            <a href="#" class="whatsapp"><i class="fa fa-whatsapp"></i> Send on WhatsApp</a>
+            <a ng-click="share('facebook')" class="facebook"><i class="fa fa-facebook"></i> Share on Facebook</a>
+            <a ng-click="share('twitter')" class="twitter"><i class="fa fa-twitter"></i> Tweet on Twitter</a>
+            <a ng-click="share('whatsapp')" class="whatsapp"><i class="fa fa-whatsapp"></i> Send on WhatsApp</a>
         </div>
     </div>
 
