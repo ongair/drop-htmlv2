@@ -1,4 +1,4 @@
-bbcApp.factory('Articles', ['$http', function($http){
+bbcApp.factory('Articles', ['$http','$location', function($http,$location){
     var articles = [];
     var page = 1;
 
@@ -47,6 +47,19 @@ bbcApp.factory('Articles', ['$http', function($http){
 
         skip: function($article) {
             $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/ignore');
+        },
+
+        getCurrentUrl: function(provider){
+            var i = articles.length-1;
+            var url = $location.absUrl() + '/' + articles[i].id;
+
+            var shares = {
+                'facebook': 'https://www.facebook.com/sharer/sharer.php?u='+url,
+                'twitter': 'https://twitter.com/intent/tweet?text='+ articles[i].title + ' ' + url,
+                'whatsapp': 'whatsapp://send?text='+ articles[i].title + ' ' + url
+            }
+
+            return shares[provider];
         }
     }
 }]);
