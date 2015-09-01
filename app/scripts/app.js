@@ -14,15 +14,9 @@ var bbcApp = angular.module('bbcApp', [
     'angular-gestures'
 ]);
 
-bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProvider){
+bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProvider ){
 
     $stateProvider
-
-    // .state('login', {
-    //     url: "/login",
-    //     templateUrl: "partials/login.html",
-    //     controller: 'LoginCtrl'
-    // })
 
     .state('tour', {
         url: "/tour",
@@ -52,6 +46,12 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
         url: "/articles",
         templateUrl: "partials/articles.html",
         controller: 'ArticlesCtrl'
+    })
+
+    .state('articlesView', {
+        url: "/articles/:articleid",
+        templateUrl: "partials/article.html",
+        controller: 'ArticleCtrl'
     })
 
     .state('article', {
