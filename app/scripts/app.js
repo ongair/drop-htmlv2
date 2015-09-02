@@ -14,10 +14,11 @@ var bbcApp = angular.module('bbcApp', [
     'angular-gestures'
 ]);
 
-bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProvider ){
+bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProvider, $compileProvider ){
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
 
     $stateProvider
-
     .state('tour', {
         url: "/tour",
         templateUrl: "partials/tour.html",
@@ -74,6 +75,8 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
             [Hammer.Pan, {time: 250}],
         ]
     });
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
 
 });
 
