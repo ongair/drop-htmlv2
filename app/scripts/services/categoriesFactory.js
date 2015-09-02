@@ -68,7 +68,7 @@ bbcApp.factory('Categories',['$http', function($http){
             }
 
             for(var i, ii = categories.length; i < ii; i++){
-                if(categories[i].selected = true){
+                if(categories[i].selected == true){
                     myCategories.categories.push(categories[i].id);
                 }
             }
