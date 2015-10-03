@@ -59,19 +59,28 @@
             margin: 10px 0px 15px 0px;
 
             .feature-tag{
-                background: rgba(152, 40, 62, 0.6) url("../img/africa_icon_sm.png") no-repeat left/22px;
-                background-position: 6px 2px;
+                background: rgba(152, 40, 62, 0.6) url("../img/world_icon_sm.png") no-repeat left/34px;
+                // background-position: 6px 2px;
                 padding: 5px 11px 7px 37px;
                 border-radius: 10px;
                 color: #fff;
                 font-size: 1.5rem;
-                font-weight: 100;
+                font-weight: 300;
 
                 img{
                     height: 25px;
                     margin-right: 9px;
                     margin-top: -5px;
                 }
+            }
+    // Icon overides per category
+
+            .Featured{
+                background: #00A14B url("../img/africa_icon_sm.png") no-repeat left/34px;
+            }
+
+            .Sports{
+                background: #27A9E1 url("../img/sports_icon_sm.png") no-repeat left/34px;
             }
 
             .pub-date{
