@@ -51,7 +51,8 @@ bbcApp.factory('Articles', ['$http','$location', function($http,$location){
 
         getCurrentUrl: function(provider){
             var i = articles.length-1;
-            var url = $location.absUrl() + '/' + articles[i].id;
+            // var url = $location.absUrl() + '/' + articles[i].id;
+            var url = articles[i].shortened_url;
 
             var shares = {
                 'facebook': 'https://www.facebook.com/sharer/sharer.php?u='+url,
