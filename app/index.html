@@ -32,6 +32,9 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="assets/css/application.css" />
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        
     </head>
     <body >
         <!--[if lt IE 7]>
@@ -41,7 +44,33 @@
 
         
         <script src="assets/js/app.min.js"></script>
-        <script src="//static.bbci.co.uk/echoclient/modules/echo-4.0.2.js" />
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                require.config({ paths: {'echo-4.0.2' : 'http://static.bbci.co.uk/echoclient/modules/echo-4.0.2'} });
+                require(['echo-4.0.2'], function(Echo){
+
+                   var Media = Echo.Media,             // Media class
+                       EchoClient = Echo.EchoClient,   // Echo Client class
+                       Enums = Echo.Enums,             // Enums
+                       ConfigKeys = Echo.ConfigKeys,   // Key names to use in config
+                       Environment = Echo.Environment; // Class to allow overriding default behaviour
+
+                   var echo = new EchoClient(
+                       'taster',                    // App Name
+                       Enums.ApplicationType.WEB   // App Type
+                   );
+
+                   //set bbc_site managed label - this label is mandatory and is required to assign data in comscore to the correct BBC product:
+                   echo.addManagedLabel(Enums.ManagedLabels.BBC_SITE, "taster");
+
+                   //You can optionally set the version of your application:
+                   echo.setAppVersion('1.0.0');
+
+                   echo.viewEvent("ttaster.pilot.bbc-drop.internal.home.page");
+               });    
+            });
+        </script>
 
     </body>
 </html>
