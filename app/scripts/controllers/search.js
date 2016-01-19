@@ -11,7 +11,7 @@ appControllers.controller('SearchCtrl', ['$scope', '$http','$stateParams',
                 return;
             }
 
-            $http.post('http://drop.ongair.im/api/articles/search.json',{'term':$scope.term})
+            $http.post('http://' + Drop.getBaseUrl() + '/api/articles/search.json',{'term':$scope.term})
             .then(function(response){
                 $scope.articles =  response.data.data;
 

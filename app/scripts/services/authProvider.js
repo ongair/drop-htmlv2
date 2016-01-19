@@ -7,7 +7,7 @@ bbcApp.factory('AuthProvider',[
 
         var authenticateBackend = function(authorizationResult){
             var deferred = $q.defer();
-            var url = 'http://drop.ongair.im/api/auth/sign_in';
+            var url = 'http://' + Drop.getBaseUrl() + '/api/auth/sign_in';
             if(authorizationResult){
                 authorizationResult.me().done(function(me){
                     var access_token = '';
@@ -68,7 +68,7 @@ bbcApp.factory('AuthProvider',[
             },
 
             isFullyAuthenticated: function(){
-                var url = 'http://drop.ongair.im/api/auth/status.json';
+                var url = 'http://' + Drop.getBaseUrl() + '/api/auth/status.json';
                 if(!fullyAuthenticated.status){
                     $http.get(url).then(function(response){
                         if(response.data.logged_in == true){

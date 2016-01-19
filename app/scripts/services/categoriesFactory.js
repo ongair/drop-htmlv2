@@ -14,7 +14,7 @@ bbcApp.factory('Categories',['$http', function($http){
     }
 
     var getCategories = function(){
-        var url = 'http://drop.ongair.im/api/categories.json';
+        var url = 'http://' + Drop.getBaseUrl() + '/api/categories.json';
         $http.get(url).then(function(response){
             var results = response.data.data;
             for(var i=0, ii = results.length; i < ii; i++){
@@ -28,7 +28,7 @@ bbcApp.factory('Categories',['$http', function($http){
     }
 
     var loadPreferences = function(){
-        var url = 'http://drop.ongair.im/api/auth/preferences.json';
+        var url = 'http://' + Drop.getBaseUrl() + '/api/auth/preferences.json';
         if(preferences.length == 0){
             $http.get(url).then(function(response){
                 var results = response.data.categories;
@@ -62,7 +62,7 @@ bbcApp.factory('Categories',['$http', function($http){
         },
 
         savePreferences: function(){
-            var url = 'http://drop.ongair.im/api/auth/personalize.json';
+            var url = 'http://' + Drop.getBaseUrl() + '/api/auth/personalize.json';
             var myCategories = {
                 'categories': []
             }

@@ -3,7 +3,7 @@ bbcApp.factory('Articles', ['$http','$location', function($http,$location){
     var page = 1;
 
     var fetchArticles = function(){
-        var url = 'http://drop.ongair.im/api/articles.json?page='+page;
+        var url = 'http://' + Drop.getBaseUrl() + '/api/articles.json?page='+page;
         $http.get(url).then(function(response){
             var results = response.data.data;
             for(var i=0, ii = results.length; i < ii; i++){
@@ -42,11 +42,11 @@ bbcApp.factory('Articles', ['$http','$location', function($http,$location){
         },
 
         like: function($article) {
-            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/like');
+            $http.post('http://' + Drop.getBaseUrl() + '/api/articles/'+$article.id+'/like');
         },
 
         skip: function($article) {
-            $http.post('http://drop.ongair.im/api/articles/'+$article.id+'/ignore');
+            $http.post('http://' + Drop.getBaseUrl() + '/api/articles/'+$article.id+'/ignore');
         },
 
         getCurrentUrl: function(provider){
