@@ -72,7 +72,11 @@
                    echo.setAppVersion('1.0.0');
 
                    echo.viewEvent("ttaster.pilot.bbc-drop.internal.home.page");
-               });    
+                });    
+
+                require(['pilot-lib/taster-offsite-panel'], function (Panel) {
+                  var panel = new Panel('.taster-offsite-panel');
+                });
             });
         </script>
 
