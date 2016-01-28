@@ -1,0 +1,14 @@
+.view-tour {
+  
+}
+
+.taster-offsite-panel {
+  position: absolute;
+  z-index: 5000;
+  top: 0px;
+  width: 100%;
+
+  .offsite-panel__disclaimer {
+    font-size: 12px !important;
+  }  
+}
