@@ -144,6 +144,13 @@
     }
 }
 
+.taster-offsite-panel {
+    position: absolute;
+    z-index: 5000;
+    left: 13.5%;
+    top: 57px;
+}
+
 // share widget
 .share-widget{
     @extend %noselect;
