@@ -46,7 +46,7 @@
 
         <script src="assets/js/app.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
-        <iframe class="taster-offsite-panel" src="http://www.bbc.co.uk/taster/projects/bbc-drop/offsite/rate" frameborder="0" scrolling="no"></iframe>
+        <iframe id="taster-frame" class="taster-offsite-panel"  frameborder="0" scrolling="no"></iframe>
         <script src="//www.bbc.co.uk/taster/pilot-lib.js" type="text/javascript" ></script>
         <script type="text/javascript">
             $(function() {
@@ -64,6 +64,9 @@
                        Enums.ApplicationType.WEB   // App Type
                    );
 
+                   url = "http://www.bbc.co.uk/taster/projects/" + Drop.getDropId() + "/offsite/rate";
+                   document.getElementById("taster-frame").setAttribute("src", url);
+
 
                    //set bbc_site managed label - this label is mandatory and is required to assign data in comscore to the correct BBC product:
                    // echo.addManagedLabel(Enums.ManagedLabels.BBC_SITE, "taster");
@@ -71,7 +74,7 @@
                    //You can optionally set the version of your application:
                    echo.setAppVersion('1.0.0');
 
-                   echo.viewEvent("taster.pilot.bbc-drop.internal.home.page");
+                   echo.viewEvent("taster.pilot." + Drop.getDropId() + ".internal.home.page");
                 });    
 
                 require(['pilot-lib/taster-offsite-panel'], function (Panel) {
