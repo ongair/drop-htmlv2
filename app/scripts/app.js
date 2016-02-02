@@ -65,6 +65,11 @@ bbcApp.config(function($stateProvider, $urlRouterProvider, hammerDefaultOptsProv
         url: "/search/:term",
         templateUrl: "partials/search.html",
         controller: 'SearchCtrl'
+    })
+
+    .state('terms', {
+        url: "/terms",
+        templateUrl: "partials/terms.html"
     });
 
     $urlRouterProvider.otherwise('/tour');
